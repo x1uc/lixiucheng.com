@@ -1,0 +1,7 @@
+# Redirect from /feed.xml to the blog feed because several tools look
+# for an XML feed at the /feed.xml address.
+[[redirects]]
+  from = "/feed.xml"
+  to = "/posts/index.xml"
+  status = 301
+  force = false

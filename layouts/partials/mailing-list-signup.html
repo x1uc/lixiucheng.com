@@ -1,0 +1,64 @@
+{{ $currentPageType := .Page.Section }}
+{{ $currentPageTypeFriendly := "" }}
+{{ if (eq $currentPageType "posts") }}
+  {{ $currentPageType = "blog" }}
+  {{ $currentPageTypeFriendly = "blog posts" }}
+{{ end }}
+
+{{ if (eq $currentPageType "retrospectives") }}
+  {{ $currentPageTypeFriendly = "monthly retrospectives" }}
+{{ end }}
+
+{{ if (eq $currentPageType "book-reports") }}
+  {{ $currentPageTypeFriendly = "book reports" }}
+{{ end }}
+
+
+<div class="subscribe-container">
+  <div class="subscribe-container-inner">
+    <h3>Be the first to know when I post cool stuff</h3>
+    <p>Subscribe to get my latest posts by email.</p>
+    <form
+      id="subscribe-form"
+      action="https://buttondown.com/api/emails/embed-subscribe/mtlynch"
+      method="post"
+      target="popupwindow"
+    >
+      <input type="email" name="email" id="bd-email" required />
+
+      {{ if (eq $currentPageType "notes") }}
+        <input name="tag" type="hidden" value="all" />
+      {{ else }}
+        <div class="subscribe-topic">
+          <div>
+            <input
+              id="blogposts"
+              name="tag"
+              type="radio"
+              value="{{ $currentPageType }}"
+            />
+            <label for="blogposts">Only {{ $currentPageTypeFriendly }}</label>
+          </div>
+
+          <div>
+            <input
+              id="all-updates"
+              name="tag"
+              type="radio"
+              value="all"
+              checked
+            />
+            <label for="all-updates"
+              >All posts (monthly retrospectives, book reports, etc.)</label
+            >
+          </div>
+        </div>
+      {{ end }}
+
+
+      <div class="clear">
+        <input type="submit" value="Subscribe" class="btn-primary" />
+      </div>
+    </form>
+  </div>
+</div>

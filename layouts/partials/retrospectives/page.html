@@ -1,0 +1,27 @@
+<section class="container page">
+  <article>
+    {{ partial "header.html" . }}
+
+    {{ partial "prev-next.html" . }}
+
+    {{ if not (hasPrefix .Title "Notes from") }}
+      <h2>One-Line Summary</h2>
+
+      {{ .Params.description }}
+    {{ end }}
+
+    {{- with .Content -}}
+      <div>
+        {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> ${3}` | safeHTML }}
+      </div>
+    {{- end -}}
+
+    {{ partial "prev-next.html" . }}
+
+    {{ partial "refactoring-english-ad.html" }}
+
+    {{ partial "mailing-list-signup.html" . }}
+
+    {{ partial "talkyard.html" . }}
+  </article>
+</section>

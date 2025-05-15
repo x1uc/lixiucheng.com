@@ -1,0 +1,62 @@
+{{ $srcRaw := .Get "src" }}
+{{ $altText := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $maxWidth := .Get "max-width" }}
+{{ $hasBorder := .Get "has-border" }}
+{{ $align := .Get "align" }}
+{{ $href := .Get "href" }}
+
+{{ $image := .Page.Resources.GetMatch $srcRaw }}
+{{ $src := $image.RelPermalink }}
+
+{{ $maxWidthPixels := $image.Width }}
+{{ if strings.HasSuffix $maxWidth "px" }}
+  {{ $maxWidthPixels = int (replace $maxWidth "px" "") }}
+{{ end }}
+
+{{- /* If maxWidth is set to match the image size, but it also has a border, add
+  2px to the maxWidth to account for the 1px border on either side. */ -}}
+{{ if (and $hasBorder (eq $maxWidthPixels $image.Width)) }}
+  {{ $maxWidthPixels = add $maxWidthPixels 2 }}
+{{ end }}
+
+{{ $maxWidth = printf "%dpx" $maxWidthPixels }}
+
+{{ $containerAttrs := printf `class="img%s"%s`
+  (cond (ne $align "") (printf " align-%s" $align) "")
+  (cond (ne $maxWidth "") (printf ` style="max-width: %s"` $maxWidth) "") | safeHTMLAttr }}
+
+{{ $srcset := "" }}
+{{ range $.Site.Params.photoWidths }}
+  {{- if ge $image.Width . }}
+    {{ $resized := $image.Resize (printf "%dx" .) }}
+    {{ $srcset = printf "%s%s %dw, " $srcset $resized.RelPermalink . }}
+  {{ end }}
+{{ end }}
+{{ $srcset = printf "%s%s %dw" $srcset $image.RelPermalink $image.Width }}
+
+{{ if $caption }}
+<figure {{ $containerAttrs }}>
+{{ else }}
+<div {{ $containerAttrs }}>
+{{ end }}
+
+{{ if $src }}
+  <a href="{{ if $href }}{{ $href }}{{ else }}{{ $src }}{{ end }}">
+    <img
+      {{ if $hasBorder }}class="img-border"{{ end }}
+      sizes="(min-width: 768px) {{ if $maxWidth }}{{ $maxWidth }}{{ else }}{{ index (last 1 $.Site.Params.photoWidths) 0 }}px{{ end }}, 98vw"
+      srcset='{{ $srcset }}'
+      src="{{ $src }}" alt="{{$altText}}" loading="lazy"/>
+  </a>
+{{ else }}
+  {{ errorf "failed to find image %s: %s" $srcRaw .Position }}
+  could not find image
+{{ end }}
+
+{{ if $caption }}
+<figcaption><p>{{ $caption | markdownify }}</p></figcaption>
+</figure>
+{{ else }}
+</div>
+{{ end }}

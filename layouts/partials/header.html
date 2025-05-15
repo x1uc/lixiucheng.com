@@ -1,0 +1,35 @@
+<header>
+  {{ if .Page.Params.hero_image }}
+    <a href="{{ .Page.Params.hero_image }}">
+      <img src="{{ .Page.Params.hero_image }}" />
+    </a>
+  {{ end }}
+  <div class="post-title">
+    <h1 class="title">{{ .Title }}</h1>
+  </div>
+  <div class="post-meta">
+    <span class="header-meta">
+      <i class="fa-solid fa-calendar"></i>&nbsp;<time
+        datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+      >
+        {{ .Date.Format .Site.Params.dateFormat }}
+        {{ if ne .Date .Lastmod }}
+          •&nbsp;Updated
+          {{ .Lastmod.Format .Site.Params.dateFormat }}
+        {{ end }}
+      </time>
+    </span>
+    <span class="header-meta">
+      <i class="fa-solid fa-clock"></i>&nbsp;{{ .ReadingTime }}-minute&nbsp;read
+    </span>
+    {{ with .Page.Params.Tags }}
+      {{ partial "taxonomy/tags.html" . }}
+    {{ end }}
+    {{ if hugo.IsServer }}
+      <br />
+      <span style="color: green"
+        >PREVIEW DRAFT: {{ .Content | countwords }} words
+      </span>
+    {{ end }}
+  </div>
+</header>

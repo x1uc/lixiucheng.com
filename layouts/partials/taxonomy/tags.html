@@ -1,0 +1,9 @@
+<div class="tags">
+  <i class="fa-solid fa-tag"></i>&nbsp;
+  {{- range $index, $el := . -}}
+    {{- if gt $index 0 }}
+      <span class="separator">•</span>
+    {{- end }}
+    <a href="{{ printf "/tags/%s/" ( . | urlize ) }}">{{ . }}</a>
+  {{- end -}}
+</div>

@@ -1,0 +1,8 @@
+<div class="prev-next-links">
+  {{ with .PrevInSection }}
+    <a href="{{ .RelPermalink }}">&laquo; Previous</a>
+  {{ end }}
+  {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}">Next &raquo;</a>
+  {{ end }}
+</div>

@@ -1,0 +1,11 @@
+{
+  "name": "mtlynch-io-dev",
+  "version": "1.0.0",
+  "description": "mtlynch.io dev environment",
+  "author": "Michael Lynch",
+  "devDependencies": {
+    "netlify-cli": "^21.4.1",
+    "prettier": "3.5.3",
+    "prettier-plugin-go-template": "^0.0.15"
+  }
+}

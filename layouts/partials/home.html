@@ -1,0 +1,20 @@
+<section class="container centered">
+  <div>
+    <div class="lists">
+      <h2>Recent posts</h2>
+
+      <ul>
+        {{ range ( .Site.RegularPages | first 15 ) }}
+          <li>
+            {{ .Date.Format "2006-01-02" }}:
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a class="tag tag-{{ .Section }}" href="/{{ .Section }}/"
+              >{{ .Section }}</a
+            >
+          </li>
+        {{ end }}
+      </ul>
+      <p>&nbsp;</p>
+    </div>
+  </div>
+</section>

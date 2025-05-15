@@ -1,0 +1,80 @@
+baseurl = "https://x1uc.top"
+title = "I'm Xiuc"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+timeout = 300000
+
+# We don't want to canonify URLs because it prevents us from
+# deploying drafts of the site to alternate hosts.
+canonifyurls = false
+
+pygmentsstyle = "colorful"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+buildFuture = true
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.highlight]
+    style = "native"
+  [markup.goldmark.renderer]
+    # Allow Markdown to include embedded HTML.
+    unsafe= true
+
+[permalinks]
+    posts = "/:filename/"
+
+[params]
+    dateFormat = "January 2, 2006"
+    author = "Xiuc"
+    info = "By day, a simple software engineer. By night, also a software engineer."
+    description = "Updates about my life and what I learn about creating software"
+    twitter = "deliberatecoder"
+    currentproject = "Educational Products"
+    keywords = "blog,developer,personal"
+    avatarurl = "images/avatar.jpg"
+    since = "2024"
+    footercontent = "power by <a href=\"https://github.com/mtlynch/mtlynch.io\" target=\"_blank\">mtlynch.io</a>"
+
+    favicon_32 = "/images/favicon/favicon-32x32.jpg"
+    favicon_16 = "/images/favicon/favicon-16x16.jpg"
+
+    hidecredits = false
+    hidecopyright = false
+
+     popularPosts = [
+      "i-sold-tinypilot",
+      "why-i-quit-google",
+      "tinypilot-redesign",
+      "code-review-love",
+      "human-code-reviews-1",
+      "tinypilot",
+      "stole-siacoins"
+    ]
+
+    rtl = false
+
+    photoWidths = [300, 600, 800, 1200]
+
+    talkyardServerUrl = "https://comments.mtlynch.io"
+    talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
+
+[imaging]
+quality = 90
+resampleFilter = "Lanczos"
+
+# Social links
+
+# Menu links
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "About"
+    weight = 6
+    url = "/about/"

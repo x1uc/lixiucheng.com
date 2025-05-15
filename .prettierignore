@@ -1,0 +1,11 @@
+.direnv
+package-lock.json
+.netlify/state.json
+node_modules/
+public/
+resources/
+**/third-party/
+static/**/*.html
+
+# TODO: Make these play nicely with prettier
+layouts/shortcodes/

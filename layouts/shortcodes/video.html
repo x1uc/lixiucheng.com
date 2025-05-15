@@ -1,0 +1,15 @@
+{{ $src := .Get "src" }}
+{{ $caption := .Get "caption" }}
+{{ $maxWidth := .Get "max-width" }}
+
+<figure class="video" {{- if $maxWidth }} style="max-width: {{ $maxWidth }}"{{ end -}}>
+  <div class="video-inner">
+    <video controls>
+      <source src="{{ $src }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    {{ if $caption }}
+      <figcaption><p>{{ $caption | markdownify }}</p></figcaption>
+    {{ end }}
+  </div>
+</figure>

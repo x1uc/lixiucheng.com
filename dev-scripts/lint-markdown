@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Uses Markdown Linter to find issues in markdown files.
+
+# Note that we use sh instead of bash because only sh is available
+# in some markdownlint Docker images.
+
+markdownlint-cli2 "./content/**/*.md"
