@@ -4,7 +4,7 @@ srcDate: "2018-11-09"
 srcLink: "https://mtlynch.io/good-developers-bad-tests/"
 srcAuthor: "Michael Lynch"
 
-title: "优秀的开发者不一定会写优秀的测试"
+title: "优秀的开发者不一定会写优秀的单元测试"
 description: 这是一段描述
 tags:
   - testing
