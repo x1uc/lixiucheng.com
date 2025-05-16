@@ -85,30 +85,3 @@
 .translate-card .card-external-link i {
   margin-right: 0.5rem;
 }
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .translate-card {
-    background: #2d2d2d;
-  }
-
-  .translate-card .card-title {
-    color: #e1e1e1;
-  }
-
-  .translate-card .card-description {
-    color: #b0b0b0;
-  }
-
-  .translate-card .card-meta {
-    color: #999;
-  }
-
-  .translate-card .card-date {
-    color: #b0b0b0;
-  }
-
-  .translate-card .card-external-link {
-    color: #5dade2;
-  }
-} 
