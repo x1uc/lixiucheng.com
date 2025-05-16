@@ -1,0 +1,21 @@
+{{ $srcTitle := .Params.srcTitle }}
+{{ $srcDescription := .Params.srcDescription }}
+{{ $refLink := .Params.srcLink }}
+{{ $srcDate := .Params.srcDate }}
+{{ $srcAuthor := .Params.srcAuthor }}
+
+<div class="translate-card">
+  <a href="{{ $refLink }}" target="_blank" rel="noopener noreferrer" class="card-link">
+    <div class="card-content">
+      <div class="card-header">
+        <h3 class="card-title">{{ $srcTitle }}</h3>
+        <span class="card-date">{{ $srcDate }}</span>
+      </div>
+      {{ with $srcAuthor }}
+      <div class="card-author">
+        <i class="fas fa-user"></i> {{ . }}
+      </div>
+      {{ end }}
+    </div>
+  </a>
+</div> 

@@ -75,6 +75,10 @@ resampleFilter = "Lanczos"
     weight = 1
     url  = "/posts/"
 [[menu.main]]
+    name = "Translatation"
+    weight = 5
+    url = "/translate"
+[[menu.main]]
     name = "About"
     weight = 6
     url = "/about/"
