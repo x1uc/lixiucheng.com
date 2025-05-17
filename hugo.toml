@@ -14,6 +14,7 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 buildFuture = true
+hasCJKLanguage = true
 
 [taxonomies]
   tag = "tags"
