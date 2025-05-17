@@ -1,0 +1,87 @@
+.translate-card {
+  background: var(--bg-color);
+  border: 1px solid var(--alt-bg-color);
+  border-radius: 8px;
+  margin: 2rem 0;
+  transition: all 0.3s ease;
+}
+
+.translate-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.translate-card .card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.translate-card .card-content {
+  padding: 2rem;
+}
+
+.translate-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.translate-card .card-title {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--fg-color);
+  flex: 1;
+}
+
+.translate-card .card-date {
+  font-family: var(--code-font);
+  font-size: 1.4rem;
+  color: var(--fg-color);
+  opacity: 0.6;
+  margin-left: 2rem;
+}
+
+.translate-card .card-author {
+  font-size: 1.4rem;
+  color: var(--fg-color);
+  opacity: 0.8;
+  margin: 0.5rem 0;
+}
+
+.translate-card .card-author i {
+  opacity: 0.6;
+  margin-right: 0.5rem;
+}
+
+.translate-card .card-description {
+  margin: 1rem 0;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--fg-color);
+  opacity: 0.8;
+}
+
+.translate-card .card-meta {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--alt-bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.translate-card .card-translation-title {
+  font-size: 1.4rem;
+  color: var(--fg-color);
+}
+
+.translate-card .card-external-link {
+  font-size: 1.4rem;
+  color: var(--link-color);
+}
+
+.translate-card .card-external-link i {
+  margin-right: 0.5rem;
+}
