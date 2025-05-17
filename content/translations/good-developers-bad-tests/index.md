@@ -5,7 +5,7 @@ srcLink: "https://mtlynch.io/good-developers-bad-tests/"
 srcAuthor: "Michael Lynch"
 
 title: "优秀的开发者不一定会写优秀的单元测试"
-description: 这是一段描述
+description: 如果不根据单元测试的特点进行调整，常见的优秀开发技术反而可能误导你。
 tags:
   - testing
 date: "2025-05-16"
@@ -13,39 +13,39 @@ images:
   - good-developers-bad-tests/cover.jpg
 ---
 
-Congratulations! You've finally written so many lines of code that you can afford a beach house. You hire Peter Keating, an architect world-famous for his skyscrapers, who assures you that he has brilliant plans for your beachfront property.
+恭喜，你通过多年写下的百万行代码终于可以拿下一栋海景别墅。你雇佣了世界上最顶尖的摩天大楼建筑师来为你打造它，他保证他的建筑方案会让你满意。
 
-Months later, you arrive at the grand unveiling. Your new home is an imposing five-story behemoth of steel, concrete, and reflective glass. As you pass through the revolving doors, you track sand onto the opulent marble floor. Inside, you find a reception desk backed by an elevator bank. Upstairs, your master bedroom and three guest rooms are just four adjoining office cubicles.
+几个月过去了，你来到了盛大的揭幕仪式。你的别墅是一栋由钢筋、混凝土、反光玻璃组成的五层巨兽。当你穿过旋转门时，沙子被带到了豪华的大理石地板上。接下来映入眼帘的是一个接待台，后面是一排电梯。让我们看下楼上，你的主卧和三间客房。只不过看起来像是办公室改造的。
 
 {{<img src="cover.jpg" alt="Architect presenting skyscraper on the beach" max-width="800px">}}
 
-Peter Keating, expert architect, can't understand why you're disappointed. "I followed **all** the best practices," he tells you, defensively. The walls are three feet thick because structural integrity is vital. Therefore, your home is _better_ than the breezy, light-filled homes neighboring it. You may not have large, oceanside windows, but Keating tells you that such windows are not best practice &mdash; they reduce energy efficiency and distract office workers.
+这位杰出的建筑师不明白你为何会感觉到如此失望。"我可是遵循了所有的 _最佳实践!_"。因为结构稳固至关重要，所以你家的墙有足足3英尺厚。因此，从理论上来说，你的房子是比邻居好的，你完全没必要羡慕邻居通风优秀、采光良好的房子。你家没有大大的海景窗，因为这位建筑师坚信那种窗户 _不符合最佳实践_——它们降低能效，还会分散办公室员工的注意力。
 
-Too often, software developers approach unit testing with the same flawed thinking. They mechanically apply all the "rules" they learned in production code without examining whether they're appropriate for tests. As a result, they build skyscrapers at the beach.
+软件开发者常常将这种错误的思维带入到`unit testing`中。他们机械的认为在生产代码中学到的规则可以应用在任何场景。他们没有考虑过这些规则在测试场景中是否恰当。最终导致的结果就是，他们在沙滩边建了一栋摩天大楼。
 
-## Test code is not like other code
+## 测试代码的特殊性
 
-Production applications typically involve thousands to millions of lines of code. They're too large for humans to conceptualize all at once. To manage the complexity, language designers have provided mechanisms like functions and class hierarchies that allow developers to think in abstractions.
+生产环境的代码规模庞大，通常包含几千~几百万行代码。面对这种体量的代码，没有人可以一下就理解。为了应对这种复杂性，编程语言设计者引入了函数、类层级等机制，帮助开发者通过抽象来思考问题。
 
-Good production code achieves encapsulation. It allows the reader to navigate large systems with ease, diving down into the details or rising to a higher level of abstraction, as needed.
+好的生产代码努力的实现封装。这让开发者可以自由的在代码中进行穿梭。可以深入细节，也可以上升到更高的抽象层级。
 
-Test code is a different beast. A good unit test is often small enough that a developer can conceptualize all the logic at once. Adding layers of abstraction to test code increases its complexity. Tests are a diagnostic tool, so they should be as simple and obvious as possible.
+测试代码的评定维度和生产代码不一致。一个优秀的单元测试常常是很小的，它的内容让人一目了然。对单元测试添加抽象层是增加它的复杂性。测试是诊断工具，他们应该简单并且足够直观。
 
 {{<notice type="info">}}
-**Good production code is well-factored; good test code is _obvious_.**
+**生产代码的核心在于良好的结构(well-factored)；测试代码的核心在于 _直观_.**
 {{</notice>}}
 
 {{<img src="dane-deaner-272363-unsplash-cropped.jpg" alt="Image of a ruler" max-width="325px" align="right" href="https://unsplash.com/photos/JNpmCYZID68">}}
 
-Think of a ruler. It has existed in the same form for hundreds of years because it's uncomplicated and easy to interpret. Suppose I invented a new ruler that measured in "abstract ruler units." To convert from "ruler units" to inches or centimeters, you'd use a separate conversion chart.
+我们讨论一下尺子这种工具。它之所以能存在数百年，就是因为它不复杂，使用简单。假如我制作了一把"德古拉尺"，它的单位是"德古拉"，"德古拉"与厘米有一定的转换关系。你需要使用一张换算表去进行换算。
 
-If I offered such a ruler to a carpenter, they'd smack me in the face with it. It would be absurd to add a layer of abstraction to a tool that gives clear, unambiguous information.
+假如我把"德古拉尺"提供给木匠，他一定狠狠的抽我一巴掌。为一个非常直观的工具添加一个抽象层是无比滑稽的。
 
-Good test code is no different. It should produce clear results without forcing the reader to jump through multiple levels of indirection. Developers often lose sight of this because it differs from how they learned to write production code.
+好的测试代码也是一样。它应该让人一目了然，而不是为了理解它需要让读者跳入到一个间接的复杂层。开发者们常常忽视这一点，因为这与他们在开发生产代码中所得出的经验不一致。
 
-## A good developer's bad test
+## 一些经典的 Bad Test
 
-I often see otherwise talented developers write tests like the following:
+我经常看到一些非常优秀的开发者写出下面这样的测试
 
 ```python
 def test_initial_score(self):
@@ -53,12 +53,12 @@ def test_initial_score(self):
   self.assertEqual(150.0, initial_score)
 ```
 
-What does that test do? It retrieves a "score" for a user with the name `joe123` and verifies that the score is 150. At this point, you should have the following questions:
+这个测试做了什么？它查了用户`joe123`的`score`，并且检验它是否等于150。对于这个测试，你可能有下面的问题要问。
 
-1. Where did the `joe123` account come from?
-1. Why do I expect `joe123`'s score to be 150?
+1. `joe123` 是从哪来的？
+2. 为什么`joe123`的`score`要等于150？
 
-Perhaps the answers are in the `setUp` method, which the test framework calls before executing each test function:
+问题的答案在`setUp`函数中，在测试框架执行测试之前，调用了`setUp`函数。
 
 ```python
 def setUp(self):
@@ -70,17 +70,17 @@ def setUp(self):
   self.account_manager = AccountManager(database)
 ```
 
-Okay, the `setUp` method created the `joe123` user with a score of 150, which explains why `test_initial_score` expected those values. Now, all is well with the world, right?
+好的，`setUp`方法创建了一个分数为150的用户`joe123`，这解释了为什么`test_initial_score`期望这些值。现在，一切都很完美。可是事实真的是这样么？
 
-No, this is a **bad test**.
+答案是否定的，这是一个**Bad Test**。
 
-## Keep the reader in your test function
+## 让阅读测试代码的人只需要阅读测试代码
 
-When you write a test, think about the next developer who will see the test break. They don't want to read your entire test suite, and they certainly don't want to read a whole inheritance tree of test utilities.
+当你写测试的时候，要考虑遇到测试失败的开发者。他们不想阅读你的整个测试套件，更不想阅读一整套测试工具的继承树。
 
-If a test breaks, the reader should be able to diagnose the problem by reading the test function in a straight line from top to bottom. If they have to jump out of the test to read ancillary code, the test has not done its job.
+如果一个测试失败了，读者应该只需要从上到下阅读测试函数就能诊断出问题所在。如果他们还需要跳出测试函数去阅读辅助代码，那么这个测试就没有完成它的使命。
 
-With this in mind, here's a rewrite of the test from the previous section:
+我们带着这个思路去重写这个测试。
 
 ```python
 def test_initial_score(self):
@@ -96,17 +96,17 @@ def test_initial_score(self):
   self.assertEqual(150.0, initial_score)
 ```
 
-All I did was inline the code from the `setUp` method, but it made a world of difference. Now, everything the reader needs is right there in the test. It also follows the [arrange, act, assert](http://wiki.c2.com/?ArrangeActAssert) structure, which makes each phase of the test distinct and obvious.
+我所做的就是将`setUp`方法中的代码内联到测试中，但这带来了巨大的改变。现在，读者需要的所有信息都直接呈现在测试中。它还遵循了[arrange, act, assert](http://wiki.c2.com/?ArrangeActAssert)结构，这使得测试的每个阶段都清晰明了。
 
 {{<notice type="info">}}
-**The reader should understand your test without reading any other code.**
+**读者应该能够在不阅读其他代码的情况下理解你的测试。**
 {{</notice>}}
 
-## Dare to violate DRY
+## 敢于去违反"不要重复造轮子"原则
 
-Inlining the setup code is all well and good for a single test, but what happens if I have many tests? Won't I duplicate that code every time? Prepare yourself, because I'm about to advocate [copy/paste programming](https://en.wikipedia.org/wiki/Copy_and_paste_programming).
+对于单个测试来说，内联设置代码是很好的，但如果我有很多测试呢？难道我每次都要重复这些代码吗？请做好心理准备，因为我即将要提倡[copy/paste programming](https://en.wikipedia.org/wiki/Copy_and_paste_programming)。
 
-Here's another test of the same class:
+这是这个类的另外一个测试：
 
 ```python
 def test_increase_score(self):
@@ -124,19 +124,19 @@ def test_increase_score(self):
              account_manager.get_score(username='joe123'))
 ```
 
-For strict adherents to the [principle of DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) ("don't repeat yourself"), the above code is horrifying. I'm blatantly repeating myself; I copied six lines from the previous test verbatim. Worse, I'm arguing that my DRY-violating tests are _better_ than tests that are free of repeated code. How can this be?
+对于严格遵守[不要重复造轮子](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)("don't repeat yourself")原则的人来说，上面的代码会让他们感到厌恶。我们竟然大张旗鼓地`repeat myself`；我从上面的测试用例中一字不差地复制了六行代码。更令人气愤的是，我竟然说我的违反"不要重复造轮子"原则的测试比遵守原则的测试更加优秀。这怎么可能呢？
 
-If you can achieve clear tests without duplicating code, that's ideal, but remember that nonredundant code is the means, not the ends. The end goal is clear, simple tests.
+如果你不需要使用重复的代码就可以让测试简明易懂，那是最好。但是请记住，不使用重复的代码是手段，而不是目的。我们的目的是让测试代码清晰、简单。
 
-Before blindly applying DRY to your tests, think about what will make the problem obvious when a test fails. Refactoring may reduce duplication, but it also increases complexity and potentially obscures information when things break.
+不要盲目地在测试代码中遵循"不要重复造轮子"原则。在编写测试时，你应该优先考虑如何让测试失败时的原因一目了然。虽然通过抽象和重构可以减少代码重复，但这种做法往往会增加排查问题的复杂度，并可能模糊掉关键信息。
 
 {{<notice type="info">}}
-**Accept redundancy if it supports simplicity.**
+**如果重复代码能让测试更容易理解，那就可以接受。**
 {{</notice>}}
 
-## Think twice before adding helper methods
+## 添加辅助函数的时候需要考虑一些别的
 
-Maybe you can live with copy/pasting six lines in every test, but what if `AccountManager` required more setup code?
+对于每个测试用例复制六行代码是轻松的，但是如果需要更多的`setUp`代码呢？
 
 ```python
 def test_increase_score(self):
@@ -165,11 +165,11 @@ def test_increase_score(self):
              account_manager.get_score(username='joe123'))
 ```
 
-That's 15 lines just to get an instance of `AccountManager` and begin testing it. At that level, there's so much boilerplate that it distracts from the behavior you're testing.
+这15行代码是去在测试开始之前去初始化`AccountManager`。到了这种程度，样板代码的堆积影响了你对测试行为本身的专注度。
 
-Your natural inclination might be to delegate all the uninteresting code to test helper methods, but you should first ask a more vital question: why is the system so difficult to test?
+你可能会本能地想把所有"无关紧要"的代码都抽象成辅助函数。但在这么做之前，我们应该先问问自己一个更重要的问题：为什么这个系统的测试如此困难？
 
-Excessive boilerplate code is often a symptom of weak architecture. For example, the test above reveals several [design smells](https://en.wikipedia.org/wiki/Design_smell):
+大量的样板代码通常意味着系统架构存在问题。比如，上面的测试用例就暴露出了一些[design smells](https://en.wikipedia.org/wiki/Design_smell):
 
 ```python
 account_manager = AccountManager(user_database,
@@ -177,26 +177,24 @@ account_manager = AccountManager(user_database,
                                  url_downloader)
 ```
 
-`AccountManager` accesses the `user_database` directly, but its next parameter is `privilege_manager`, a wrapper for `privilege_database`. Why is it operating on two different layers of abstraction? And what is it doing with a "URL downloader?" That certainly seems conceptually distant from its other two parameters.
-
-In this case, refactoring `AccountManager` solves the root problem whereas adding helper methods would merely bury the symptoms.
+`AccountManager` 直接访问 `user_database`，但它的下一个参数是 `privilege_manager`，一个 `privilege_database` 的包装器。为什么它要在两个不同的抽象层次上操作呢？而且它为什么还需要一个`URL downloader`？这看起来与其他两个参数在概念上毫无联系。
 
 {{<notice type="info">}}
-**When tempted to write test helper methods, try refactoring your production code instead.**
+**当你想要编写测试辅助函数时，不妨先尝试重构你的生产代码。**
 {{</notice>}}
 
-## If you need helper methods, write them responsibly
+## 如果你需要辅助函数，请负责任地编写它们
 
-You don't always have the freedom to tear apart a production class for testability. Sometimes, helper methods are your only choice, so when you need them, write them well.
+有时候，我们没有修改系统架构的权限。这时，辅助函数是你唯一的选择。但是当你需要辅助函数的时候，把它们写好。
 
-An effective helper method supports the principle of "keep the reader in your test function." It's okay to extract boilerplate code into a helper function as long as it doesn't degrade the reader's understanding of the test.
+一个有效的辅助函数应该支持"让读者停留在你的测试函数中"的原则。只要不降低读者对测试的理解，将样板代码提取到辅助函数中是可以的。
 
-Specifically, helper methods should **not**:
+具体来说，辅助函数**不应该**：
 
-- bury critical values
-- interact with the object under test
+- 隐藏关键值
+- 与被测对象进行交互
 
-Here's an example of a helper method that violates these guidelines:
+这里有一个违反这些准则的辅助函数示例：
 
 ```python
 def add_dummy_account(self): # <- Helper method
@@ -218,9 +216,9 @@ def test_increase_score(self):
                    account_manager.get_score(username='joe123'))
 ```
 
-The reader can't understand why the final score should be 175 unless they search out the 150 hidden in the helper method. The helper also obscures `account_manager`'s behavior by hiding a call to `add_account` instead of keeping all interactions in the test function itself.
+除非读者去查找隐藏在辅助函数中的150这个值，否则他们无法理解为什么最终分数应该是175。辅助函数也隐藏了`add_account`的行为。
 
-Here's a rewrite that addresses those issues:
+下面是一个解决这些问题的重写版本：
 
 ```python
 def make_dummy_account(self, username, score):
@@ -243,24 +241,24 @@ def test_increase_score(self):
                    account_manager.get_score(username='joe123'))
 ```
 
-It still buries values in the helper method, but they're irrelevant to the test. It also pulls the `add_account` call back into the test so that the reader can trivially trace everything that happens to `account_manager`.
+它仍然在辅助方法中隐藏了一些值，但这些值与测试无关。它还将`add_account`调用移回测试中，这样读者可以轻松地追踪`account_manager`中发生的所有事情。
 
 {{<notice type="info">}}
-**Keep helper methods free of any information the reader needs to understand the test.**
+**确保辅助方法中不包含读者理解测试所需的任何信息。**
 {{</notice>}}
 
-## Go crazy with long test names
+## 测试函数名尽量详细
 
-Which of the following function names would you prefer to see in production code?
+你更愿意在生产代码中看到以下哪种函数名？
 
 - `userExistsAndTheirAccountIsInGoodStandingWithAllBillsPaid`
 - `isAccountActive`
 
-The first conveys more information but imposes the burden of a 57-character name. Most developers are willing to sacrifice a bit of precision in favor of for a concise, almost-as-good name like `isAccountActive` (except for Java developers, for whom both names are offensively terse).
+第一个名字信息量更大，但长度达到了57个字符，使用起来有些繁琐。大多数开发者更愿意牺牲一点精确性，选择像 `isAccountActive` 这样简洁、几乎同样表达清楚意思的名字（除了 Java 开发者，他们觉得这两个名字都太短了😂）。
 
-For test functions, there's a crucial factor that changes the equation: you never write _calls_ to test functions. A developer types out a test name exactly once &ndash; in the function signature. Given this, brevity still matters, but it matters less than in production code.
+但对于测试函数，有一个关键因素改变了这个选择：你从来不会在代码中"调用"测试函数。开发者只需要在函数定义时写一次测试名。因此，虽然简洁依然重要，但在测试代码中，名字的长度远没有生产代码那么重要。
 
-Whenever a test breaks, the test name is the first thing you see, so it should communicate as much as possible. For example, consider this production class:
+每当测试失败时，测试名是你首先看到的信息，所以它应该尽可能传达更多内容。例如，考虑下面这个生产类：
 
 ```c++
 class Tokenizer {
@@ -272,41 +270,41 @@ class Tokenizer {
 };
 ```
 
-Suppose you ran your test suite and this line appeared in the output:
+假设运行测试时出现了这样的输出：
 
 ```text
 [  FAILED  ] TokenizerTests.TestNextToken (6 ms)
 ```
 
-Would you know what caused the test to fail? Probably not.
+你能定位测试失败的原因么？我猜不能。
 
-A failure in `TestNextToken` tells you that you screwed up the `NextToken()` method, but that's meaningless in a class with a single public method. To diagnose the failure, you'd have to read the test's implementation.
+`TestNextToken` 失败只能告诉你 `NextToken()` 方法出了问题，但对于只有一个公共方法的类来说，这个信息毫无意义。要想定位失败的原因，你还得去读测试的具体实现。
 
-Instead, what if you saw this:
+但是如果你看到的输出是这样：
 
 ```text
 [  FAILED  ] TokenizerTests.ReturnsNullptrWhenStreamIsEmpty (6 ms)
 ```
 
-A function called `ReturnsNullptrWhenStreamIsEmpty` would feel overly verbose in other contexts, but it's a good test name. If you saw it break, you'd immediately know the class was mishandling empty data streams. You could likely fix the bug without ever reading the test's implementation. That's the mark of a good test name.
+在其他场景下，像 `ReturnsNullptrWhenStreamIsEmpty` 这样的函数名可能显得过于冗长，但它却是一个很好的测试名。如果你看到这个测试失败，你会立刻知道这个类在处理空数据流时出现了问题。你甚至可能无需阅读测试的具体实现就能修复这个 bug。这正是好测试名的标志。
 
 {{<notice type="info">}}
-**Name your tests so well that others can diagnose failures from the name alone.**
+**给你的测试起一个足够好的名字，让别人仅凭名字就能判断出失败的原因。**
 {{</notice>}}
 
-## Embrace magic numbers
+## 拥抱魔法数字
 
-"Don't use magic numbers."
+"不要使用魔法数字。"
 
-It's the "don't talk to strangers" of the programming world. Many skilled developers internalize this lesson so profoundly that they never consider when a magic number might improve their code.
+这句话就像编程世界里的"不要和陌生人说话"。许多有经验的开发者把这条教训牢记于心，以至于从未想过魔法数字有时其实能让代码更好。
 
-As a refresher, a "magic number" is a numeric value or string that appears in code without information about what it represents. Here's an example:
+简单回顾一下，"魔法数字"指的是在代码中出现的、没有说明其含义的数值或字符串。比如下面这个例子：
 
 ```python
 calculate_pay(80) # <-- Magic number
 ```
 
-Programmers agree that magic numbers in production code are A Very Bad Thing, so they replace them with named constants like this:
+程序员们同意在生产代码中使用魔法数字是一个`Very Bad Thing`，所以他们常常使用常量去替代魔法数字。
 
 ```python
 HOURS_PER_WEEK = 40
@@ -314,9 +312,9 @@ WEEKS_PER_PAY_PERIOD = 2
 calculate_pay(hours=HOURS_PER_WEEK * WEEKS_PER_PAY_PERIOD)
 ```
 
-Unfortunately, there's a misconception that magic numbers also weaken _test_ code, but the opposite is true.
+不幸的是，有一种误解认为魔法数字同样不适用于测试代码，但事实恰恰相反。
 
-Consider the following test:
+请看下面这个测试：
 
 ```python
 def test_add_hours(self):
@@ -328,9 +326,9 @@ def test_add_hours(self):
   self.assertEqual(expected_billable_hours, hours_tracker.billable_hours())
 ```
 
-If you believe magic numbers are universally evil, the above test looks correct to you. `72.0` and `8.0` have named constants, so nobody can accuse the test of magic numbers.
+如果你认为魔法数字是绝对的"邪门歪道"，那么上面的测试对你来说看起来是正确的。`72.0` 和 `8.0` 都被赋予了有意义的常量名，因此没人会指责这个测试用了魔法数字。
 
-But, just for a moment, suspend your religious beliefs and indulge in the forbidden fruit of magic numbers:
+但请暂时放下你对魔法数字的偏见，来尝试一下"禁果"吧：
 
 ```python
 def test_add_hours(self):
@@ -339,21 +337,21 @@ def test_add_hours(self):
   self.assertEqual(80.0, hours_tracker.billable_hours())
 ```
 
-It's simpler, with only half as many lines of code. And it's more obvious &mdash; the reader doesn't have to bounce around the function tracking names of constants.
+明显更简单。它只使用了一般的代码，并且更加的直观 &mdash; 读者不需要为了弄清常量的真实值去在函数中跳转。
 
-When I see developers define constants in test code, it's usually due to a misguided adherence to DRY or because they're afraid to use magic numbers. However, it's rarely necessary for tests to declare constants, and doing so makes them harder to understand.
+当我看到开发者在测试代码中定义常量时，通常是因为他们对"不要重复造轮子"（don't repeat youself）原则的误解，或者是害怕使用魔法数字。然而，测试中很少有必要去声明常量，这么做反而让测试变得更难理解。
 
 {{<notice type="info">}}
-**Prefer magic numbers to named constants in test code.**
+**在测试代码中，优先使用魔法数字而不是命名常量。**
 {{</notice>}}
 
 {{<notice type="warning">}}
-**Note**: It's okay for unit tests to _reference_ constants that the production code exposes. They just shouldn't define their own.
+**单元测试可以引用生产代码中暴露的常量，但不应该在测试中自行定义常量。**
 {{</notice>}}
 
-## Conclusion
+## 总结
 
-To write excellent tests, a developer must align their engineering decisions with the goals of test code. Most importantly, tests should maximize simplicity while minimizing abstraction. A good test allows the reader to understand intended behavior and diagnose issues without ever leaving the test function.
+要编写优秀的测试，开发者必须让自己的工程决策(engineering decisions)与测试代码的目标保持一致。最重要的是，测试应当尽可能地简化，避免不必要的抽象。一个好的测试能够让读者在不离开测试函数的情况下，理解预期行为并定位问题。
 
 ---
 
