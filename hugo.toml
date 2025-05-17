@@ -1,7 +1,7 @@
 baseurl = "https://x1uc.top"
 title = "I'm Xiuc"
-languagecode = "en"
-defaultcontentlanguage = "en"
+languagecode = "zh-cn"
+defaultcontentlanguage = "zh-cn"
 
 timeout = 300000
 
@@ -77,7 +77,7 @@ resampleFilter = "Lanczos"
 [[menu.main]]
     name = "Translatations"
     weight = 5
-    url = "/translations"
+    url = "/translations/"
 [[menu.main]]
     name = "About"
     weight = 6
