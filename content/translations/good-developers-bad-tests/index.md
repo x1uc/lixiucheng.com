@@ -10,7 +10,7 @@ tags:
   - testing
 date: "2025-05-16"
 images:
-  - good-developers-bad-tests/cover.jpg
+  - /translations/good-developers-bad-tests/cover.jpg
 ---
 
 恭喜，你通过多年写下的百万行代码终于可以拿下一栋海景别墅。你雇佣了世界上最顶尖的摩天大楼建筑师来为你打造它，他保证他的建筑方案会让你满意。
