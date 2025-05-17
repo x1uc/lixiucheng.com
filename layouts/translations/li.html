@@ -3,7 +3,7 @@
   {{ $image = printf "%s%s" .RelPermalink .Page.Params.hero_image }}
 {{ else }}
   {{- with .Page.Params.images -}}
-    {{ $image = printf "/%s"  (index . 0) }}
+    {{ $image = printf "/translations/%s"  (index . 0) }}
   {{ end }}
 {{ end }}
 
