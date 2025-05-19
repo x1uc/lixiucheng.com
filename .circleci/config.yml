@@ -97,10 +97,9 @@ jobs:
       - run:
           name: Remove base tag from generated HTML
           command: find public -name "*.html" -exec sed -i -e 's/<base[^>]*>//g' {} +
-    steps:
       - run: 
-        name: Deploy to production
-        command: npx wrangler pages deploy public --project-name=xiuc --branch=draft
+          name: Deploy to production
+          command: npx wrangler pages deploy public --project-name=xiuc --branch=draft
 
   deploy:
     docker:
@@ -109,10 +108,9 @@ jobs:
     steps:
       - attach_workspace:
           at: ./
-    steps:
       - run: 
-        name: Deploy to production
-        command: npx wrangler pages deploy public --project-name=xiuc --branch=main
+          name: Deploy to production
+          command: npx wrangler pages deploy public --project-name=xiuc --branch=main
 workflows:
   version: 2
   test-deploy:
