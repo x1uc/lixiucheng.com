@@ -97,25 +97,22 @@ jobs:
       - run:
           name: Remove base tag from generated HTML
           command: find public -name "*.html" -exec sed -i -e 's/<base[^>]*>//g' {} +
-      - run:
-          name: Install netlify CLI
-          command: npm install netlify-cli --save-dev
-      - run:
-          name: Deploy a live draft
-          command: ./node_modules/.bin/netlify deploy --dir=public --site="${NETLIFY_SITE_ID}"
+    steps:
+      - run: 
+        name: Deploy to production
+        command: npx wrangler pages deploy public --project-name=xiuc --branch=draft
+
   deploy:
     docker:
-      - image: cimg/node:18.14.1
-    resource_class: small
+      - image: cimg/node:18.7.0
+        resource_class: small
     steps:
       - attach_workspace:
           at: ./
-      - run:
-          name: Install netlify CLI
-          command: npm install netlify-cli --save-dev
-      - run:
-          name: Deploy to production
-          command: ./node_modules/.bin/netlify deploy --dir=public --site="${NETLIFY_SITE_ID}" --prod
+    steps:
+      - run: 
+        name: Deploy to production
+        command: npx wrangler pages deploy public --project-name=xiuc --branch=main
 workflows:
   version: 2
   test-deploy:
