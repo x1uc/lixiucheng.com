@@ -1,6 +1,7 @@
 ---
 title: "组装我的第一台主机"
-date: 2025-05-15
+date: 2025-01-29
+lastmod: 2025-05-15
 description: 组装一台主机的简要经历介绍
 images:
   - build-first-desktop-computer/neofetch.png
