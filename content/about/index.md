@@ -14,4 +14,4 @@ title: About
 
 - Github: [@xiuc](https://github.com/x1uc/)
 - Bilibili: [@绣程li](https://space.bilibili.com/359368171)
-- Email: [ergouli848@gamil.com](mailto:ergouli848@gmail.com)
+- Email: [hi@lixiucheng.com](mailto:hi@lixiucheng.com)
