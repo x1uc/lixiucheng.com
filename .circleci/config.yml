@@ -87,7 +87,7 @@ jobs:
           command: ./dev-scripts/check-seo-metadata
   publish_draft:
     docker:
-      - image: cimg/node:18.14.1
+      - image: cimg/node:20.0.0
     resource_class: small
     steps:
       - attach_workspace:
@@ -99,18 +99,18 @@ jobs:
           command: find public -name "*.html" -exec sed -i -e 's/<base[^>]*>//g' {} +
       - run:
           name: Deploy to production
-          command: npx wrangler pages deploy public --project-name=xiuc --branch=draft
+          command: npx wrangler@4.20.5 pages deploy public --project-name=xiuc --branch=draft
 
   deploy:
     docker:
-      - image: cimg/node:18.7.0
+      - image: cimg/node:20.0.0
     resource_class: small
     steps:
       - attach_workspace:
           at: ./
       - run:
           name: Deploy to production
-          command: npx wrangler pages deploy public --project-name=xiuc --branch=main
+          command: npx wrangler@4.20.5 pages deploy public --project-name=xiuc --branch=main
 workflows:
   version: 2
   test-deploy:
