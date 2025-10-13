@@ -10,3 +10,19 @@ set -u
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 readonly SCRIPT_DIR
 cd "${SCRIPT_DIR}/../.."
+
+echo "Running pre-commit checks..."
+
+# Check code formatting with Prettier
+echo "Checking code formatting..."
+./dev-scripts/check-formatting
+
+# Check for trailing whitespace
+echo "Checking for trailing whitespace..."
+./dev-scripts/check-trailing-whitespace
+
+# Check for trailing newlines
+echo "Checking for trailing newlines..."
+./dev-scripts/check-trailing-newline
+
+echo "All pre-commit checks passed!"
