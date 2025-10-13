@@ -65,9 +65,9 @@ IGNORE_PATTERNS+=("/www.reddit.com/")
 IGNORE_PATTERNS+=("/www.sciencedirect.com/")
 IGNORE_PATTERNS+=("/www.servicenow.com/")
 IGNORE_PATTERNS+=("/www.usta.com/")
-
+IGNORE_PATTERNS+=("/bilibili.com/")
 # Ignore links to comments that only load in production.
-IGNORE_PATTERNS+=("/x1uc.top\\/.*#comment-.*/")
+# IGNORE_PATTERNS+=("/x1uc.top\\/.*#comment-.*/")
 
 URL_IGNORE="$(join_by , "${IGNORE_PATTERNS[@]}")"
 
