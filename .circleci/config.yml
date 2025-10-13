@@ -49,7 +49,6 @@ jobs:
           paths:
             - dev-scripts
             - public
-            - netlify.toml
       - save_cache:
           key: resources-gen-v{{ .Environment.RESOURCES_CACHE_VERSION }}
           paths:
