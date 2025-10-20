@@ -2,6 +2,8 @@
   font-size: 0.8em;
   margin-left: 1rem;
   padding: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
 
   &:hover {
     text-decoration: none;

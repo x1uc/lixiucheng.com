@@ -1,0 +1,28 @@
+{{ define "title" }}
+{{- if eq .Kind "taxonomy" -}}
+{{- .Data.Singular | title -}}
+{{- print ": " -}}
+{{- end -}}
+
+{{- .Title }} ·
+{{ .Site.Title -}}
+{{ end }}
+{{ define "content" }}
+<section class="container list">
+    <h1 class="title">
+        {{- if eq .Kind "taxonomy" -}}
+        {{- .Data.Singular | title -}}
+        {{- print ": " -}}
+        {{- end -}}
+        {{- .Title -}}
+    </h1>
+    因为最近一段时间业务代码写的比较多，而且大部分的代码都是AI生成的。想找回一下思考编码的感觉，正好我最近想学习一下Go语言，所以我计划使用Go去写一下1200~1600的题目。一方面学习Go语言，一方面练习自己的专注能力和提升思维，还有就是想尝试一下费曼学习法。
+    最后还希望能完成我大学时期的没完成的小目标，上到1600分。
+    <ul class="blurb-list">
+        {{ range .Pages }}
+        {{- .Render "li" -}}
+        {{ end }}
+    </ul>
+</section>
+
+{{ end }}

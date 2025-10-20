@@ -77,9 +77,13 @@ resampleFilter = "Lanczos"
     url  = "/posts/"
 [[menu.main]]
     name = "Translatations"
-    weight = 5
+    weight = 2
     url = "/translations/"
 [[menu.main]]
+    name = "Codeforces"
+    weight = 3
+    url = "/codeforces/"
+[[menu.main]]
     name = "About"
-    weight = 6
+    weight = 4
     url = "/about/"
