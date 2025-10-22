@@ -6,7 +6,7 @@ images:
   - for-simple-read/cover.png
 ---
 
-{{<img src="cover.png" alt="neofetch image" align="center" >}}
+{{<img src="cover.png" alt="example" align="center" >}}
 
 写这篇文章只是分享记录，我的英语水平目前还很糟糕。
 
