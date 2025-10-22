@@ -4,7 +4,7 @@
       <h2>Recent posts</h2>
 
       <ul>
-        {{ range ( .Site.RegularPages | first 15 ) }}
+        {{ range ( where .Site.RegularPages "Section" "ne" "codeforces" | first 15 ) }}
           <li>
             {{ .Date.Format "2006-01-02" }}:
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
