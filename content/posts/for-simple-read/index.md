@@ -2,7 +2,11 @@
 title: "for-simple-read[英文阅读插件]"
 date: 2025-10-11
 description: 我有阅读英语文章的来学习英语的习惯，市面上的工具不能很好的满足我的需求，所以我做了一款浏览器插件来帮助我更轻松的学习英语。
+images:
+  - for-simple-read/cover.png
 ---
+
+{{<img src="cover.png" alt="neofetch image" align="center" >}}
 
 写这篇文章只是分享记录，我的英语水平目前还很糟糕。
 
