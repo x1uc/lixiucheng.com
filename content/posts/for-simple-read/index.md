@@ -1,6 +1,7 @@
 ---
 title: "for-simple-read[英文阅读插件]"
 date: 2025-10-11
+lastmod: 2025-10-23
 description: 我有阅读英语文章的来学习英语的习惯，市面上的工具不能很好的满足我的需求，所以我做了一款浏览器插件来帮助我更轻松的学习英语。
 images:
   - for-simple-read/cover.png
