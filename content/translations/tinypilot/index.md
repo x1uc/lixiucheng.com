@@ -70,7 +70,7 @@ Key Mime Pi 通过USB连接到目标机器，注册为键盘设备。它也提�
 
 关于视频采集的第一个尝试，我使用的是[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)。Daniel Kučera (aka [danman](https://blog.danman.eu/))对这款设备的逆向工程做了很多[贡献](https://blog.danman.eu/new-version-of-lenkeng-hdmi-over-ip-extender-lkv373a/)。这款设备可以在eBay上从中国商户那花40$买到，这是我当时能找到的最佳选择。
 
-{{<img src="lkv373a.jpg" alt="Lenkeng LKV373A HDMI延长器照片" caption="[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)是我尝试的第一款HDMI视频采集器。" max-width="600px" has-border="false">}}
+{{<img src="lkv373a.jpg" alt="Lenkeng LKV373A HDMI延长器照片" caption="[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)是我尝试的第一款HDMI视频采集器" max-width="600px" has-border="false">}}
 
 因为LKV373A发射器不是专业的视频采集设备，所以采集视频的过程非常棘手。LKV373A发射器预期的使用方式是和LKV373A接收器进行配对，将网络流转换为HDMI输出。在 danman的研究中，他发现一种方式去拦截&捕获视频输出流，但是因为LKV373A使用了非标准的RTP协议，导致绝大多数视频工具无法识别其格式。
 
@@ -94,11 +94,11 @@ ffplay -i udp://239.255.42.42:5004
 
 当我浏览推特时，我看到了[Arsenio Dev的一条推文](https://twitter.com/Ascii211/status/1268631069051453448)，关于他刚刚购买的一个低价的HDMI to USB转换器。
 
-{{<img src="arsenio-dev-tweet.jpg" alt="Arsenio Dev的推文截图" caption="一篇[来自Arsenio Dev的推特](https://twitter.com/Ascii211/status/1268631069051453448) 启发我找到了更好的视频采集方式。" href="https://twitter.com/Ascii211/status/1268631069051453448" has-border="false">}}
+{{<img src="arsenio-dev-tweet.jpg" alt="Arsenio Dev的推文截图" caption="一篇[来自Arsenio Dev的推特](https://twitter.com/Ascii211/status/1268631069051453448) 启发我找到了更好的视频采集方式" href="https://twitter.com/Ascii211/status/1268631069051453448" has-border="false">}}
 
 1080p&30帧/s采集视频，这个描述有点难以置信，我马上下单了。仅售$11并且包邮。我甚至不知道它的品牌名，所以之后我就叫他“HDMI转换器”吧。类似的商品有很多，这类商品的关键点在于[MS2109芯片](https://twitter.com/Ascii211/status/1268641527531741186)
 
-{{<img src="hdmi-ebay.png" alt="eBay上售价11.20美元的HDMI转换器截图" caption="在eBay上$11.20就可以买到这款HDMI to USB转换器，并且包邮。" max-width="750px">}}
+{{<img src="hdmi-ebay.png" alt="eBay上售价11.20美元的HDMI转换器截图" caption="在eBay上$11.20就可以买到这款HDMI to USB转换器，并且包邮" max-width="750px">}}
 
 我收到快递之后，体验出乎意料的好。不需要任何额外的操作，当我把它插入树莓派之后，立即被识别为UVC视频采集设备。
 
@@ -130,11 +130,11 @@ ffplay.exe -i udp://@10.0.0.100:1234/stream
 ```
 
 简直不要太便利！LKV373A接近砖头一样的大小并且需要电源和网线。但是这个HDMI转换器的大小接近U盘，并且只需要一个USB的接口。
-{{<img src="lkv373a-vs-dongle.jpg" alt="Lenkeng LKV373A与HDMI转换器对比" caption="[Lenkeng LKV373A HDMI延长器](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)（左）比HDMI转换器（右）更大，需要更多连接线。" max-width="700px" has-border="false">}}
+{{<img src="lkv373a-vs-dongle.jpg" alt="Lenkeng LKV373A与HDMI转换器对比" caption="[Lenkeng LKV373A HDMI延长器](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)（左）比HDMI转换器（右）更大，需要更多连接线" max-width="700px" has-border="false">}}
 
 现在就只有一个问题了，还是延迟。从树莓派获取的视频流比源计算机慢了7～10秒。
 
-{{<img src="dongle-ffmpeg.jpg" alt="使用ffmpeg从树莓派流式传输视频的延迟对比" caption="使用ffmpeg从树莓派流化视频时，视频延迟最高达到了10秒。" max-width="700px" has-border="false">}}
+{{<img src="dongle-ffmpeg.jpg" alt="使用ffmpeg从树莓派流式传输视频的延迟对比" caption="使用ffmpeg从树莓派流化视频时，视频延迟最高达到了10秒" max-width="700px" has-border="false">}}
 
 我不确定延迟来自HDMI转换器、树莓派上的ffmpeg，还是我桌面端的ffplay。Arsenio Dev说延迟只有20毫秒，所以似乎可以通过深入研究[ffmpeg那晦涩难懂的命令行参数](https://ffmpeg.org/ffmpeg.html)去降低延迟。
 
@@ -146,7 +146,7 @@ ffplay.exe -i udp://@10.0.0.100:1234/stream
 
 {{<img src="maxim-comment.png" alt="Max的评论截图：你好:) 看看这个项目：https://github.com/pikvm/pikvm 我们已经完成和调试了很多功能" caption="Max Devaev 指出它已经存在的 [Pi-KVM](https://github.com/pikvm/pikvm) 项目。">}}
 
-{{<img src="melty-breadboard.jpg" align="right" alt="GPIO引脚照片" max-width="500px" caption="我之前使用面包板的经历包括[不小心把它们熔化了](https://mtlynch.io/greenpithumb/#why-make-another-raspberry-pi-gardening-bot)。" has-border="false">}}
+{{<img src="melty-breadboard.jpg" align="right" alt="GPIO引脚照片" max-width="500px" caption="我之前使用面包板的经历包括[不小心把它们熔化了](https://mtlynch.io/greenpithumb/#why-make-another-raspberry-pi-gardening-bot)" has-border="false">}}
 
 我之前粗略的看过 Pi-KVM，但是这个项目涉及到[面包板](https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%8C%85%E6%9D%BF)和焊接，这让我望而却步。
 
@@ -202,7 +202,7 @@ HDMI 转换器已经使用Motion JPEG格式传输视频流！虽然uStreamer's�
 
 我配置uStreamer，让它跳过编码直接传输视频流。
 
-{{<img src="tinypilot-latency.jpg" max-width="700px" alt="消除重新编码步骤后200毫秒延迟的照片" caption="跳过树莓派上的额外重新编码步骤，延迟从600毫秒降低到200毫秒。" has-border="false">}}
+{{<img src="tinypilot-latency.jpg" max-width="700px" alt="消除重新编码步骤后200毫秒延迟的照片" caption="跳过树莓派上的额外重新编码步骤，延迟从600毫秒降低到200毫秒" has-border="false">}}
 
 延迟从600ms降低到了200ms。虽然算不上即时，但是在我使用几分钟之后，几乎感觉不到延迟。
 
@@ -243,7 +243,7 @@ TinyPilot 允许我去通过浏览器管理整个系统的安装过程。这比�
 **Warning**: TinyPilot不支持最新的Raspberry Pi操作系统。系统版本需要为 [Raspberry Pi OS Bullseye (32-bit)](https://github.com/tiny-pilot/tinypilot#pre-requisites)
 {{</notice>}}
 
-{{<img src="rufus-install.png" alt="Rufus软件截图" caption="我使用 [Rufus](https://rufus.ie) 来写入树莓派的 micro SD 卡，但任何磁盘映像工具都可以。" has-border="false">}}
+{{<img src="rufus-install.png" alt="Rufus软件截图" caption="我使用 [Rufus](https://rufus.ie) 来写入树莓派的 micro SD 卡，但任何磁盘映像工具都可以" has-border="false">}}
 
 通过创建一个`ssh`文件在microSD卡的boot分区以启动SSH访问功能。如果您想通过无线网连接，还需要一个[`wpa_supplicant.conf` 文件](https://www.raspberrypi.org/documentation/configuration/wireless/headless.md).
 
@@ -255,13 +255,13 @@ TinyPilot 允许我去通过浏览器管理整个系统的安装过程。这比�
 
 我选择了最小化的机壳，他的价格低，并且有被动散热，并且它没有风扇，这降低了硬件的复杂性：
 
-{{<img src="minimal-case.jpg" alt="树莓派极简铝制外壳" caption="这款[极简铝制外壳](https://shop.pimoroni.com/products/aluminium-heatsink-case-for-raspberry-pi-4?variant=29430673178707)能很好地为树莓派散热，且没有风扇的复杂性。" max-width="600px" has-border="false">}}
+{{<img src="minimal-case.jpg" alt="树莓派极简铝制外壳" caption="这款[极简铝制外壳](https://shop.pimoroni.com/products/aluminium-heatsink-case-for-raspberry-pi-4?variant=29430673178707)能很好地为树莓派散热，且没有风扇的复杂性" max-width="600px" has-border="false">}}
 
 ### 通过USB连接到目标机器
 
 为了让TinyPilot可以去模拟键盘，需要将树莓派树莓派的USB-C接口与目标机的USB-A接口相连：
 
-{{<gallery caption="使用 USB-C 转 USB-A 数据线，将 USB-C 端连接到树莓派的 USB-C 端口，将 USB-A 端连接到目标计算机。">}}
+{{<gallery caption="使用 USB-C 转 USB-A 数据线，将 USB-C 端连接到树莓派的 USB-C 端口，将 USB-A 端连接到目标计算机">}}
 {{<img src="usb-cable.jpg" alt="USB连接到树莓派" max-width="500px" has-border="false">}}
 {{<img src="usb-server.jpg" alt="USB连接到目标计算机" max-width="500px" has-border="false">}}
 {{</gallery>}}
@@ -286,7 +286,7 @@ TinyPilot 允许我去通过浏览器管理整个系统的安装过程。这比�
 ### 连接网口
 
 如果你通过有限局域网连接树莓派，请将网线插入树莓派的以太网端口：
-{{<img src="ethernet-cable.jpg" alt="网线连接到树莓派设备的照片" max-width="700px" caption="将网线连接到你的树莓派。" has-border="false">}}
+{{<img src="ethernet-cable.jpg" alt="网线连接到树莓派设备的照片" max-width="700px" caption="将网线连接到你的树莓派" has-border="false">}}
 
 {{<notice type="info">}}
 **Note**: 如果你在[之前](#安装-raspberry-pi-os-lite-操作系统)通过添加`wpa_supplicant.conf`文件配置了无线网络的方位，那么你可以跳过这一步。
@@ -321,7 +321,7 @@ sudo reboot
 
 - [http://raspberrypi/](http://raspberrypi/)
 
-{{<img src="tinypilot-hello-world.png" alt="TinyPilot网页界面截图" max-width="700px" caption="设置完成后，你可以在本地网络中通过 [http://raspberrypi/](http://raspberrypi/) 访问 TinyPilot 的网页界面。" has-border="false">}}
+{{<img src="tinypilot-hello-world.png" alt="TinyPilot网页界面截图" max-width="700px" caption="设置完成后，你可以在本地网络中通过 [http://raspberrypi/](http://raspberrypi/) 访问 TinyPilot 的网页界面" has-border="false">}}
 
 ## 电源问题
 
@@ -336,7 +336,7 @@ Jun 28 06:23:15 tinypilot kernel: Under-voltage detected! (0x00050005)
 
 为了解决这个问题，我与一家工程公司合作制作了一款定制的电路板，分割树莓派的USB-C端口为两个。一个端口用来接受USB供电，让树莓派可以获得稳定的3A电流。另外一个端口用来接受USB的数据输出，让树莓派可以模拟USB键盘。
 
-{{<gallery caption="[TinyPilot 电源连接器](https://tinypilotkvm.com/product/tinypilot-power-connector) 允许树莓派通过其 USB-C 端口接收 3 安培的电力，同时不失去 USB OTG 功能。">}}
+{{<gallery caption="[TinyPilot 电源连接器](https://tinypilotkvm.com/product/tinypilot-power-connector) 允许树莓派通过其 USB-C 端口接收 3 安培的电力，同时不失去 USB OTG 功能">}}
 {{<img src="power-connector.jpg" alt="电源连接器特写" max-width="500px" has-border="false">}}
 {{<img src="power-connector-cables.jpg" alt="电源连接器连接到树莓派和microUSB线缆" max-width="500px" has-border="false">}}
 {{</gallery>}}
