@@ -16,7 +16,7 @@ images:
 {{</notice>}}
 TinyPilot 是一款我自制的远程控制设备，它开源并且构建的价格也很合适。它可以在操作系统启动之前就工作，所以你可以使用它为计算机安装操作系统，或者向我一样为我的[无头服务器](https://mtlynch.io/building-a-vm-homelab/)调试启动失败的问题。
 
-这篇帖子是我创建TinyPilot的过程，并且为你展示我如何使用[树莓派](https://www.raspberrypi.com/)在100$一下构建这台设备。
+这篇帖子是我创建TinyPilot的过程，并且为你展示我如何使用[树莓派](https://www.raspberrypi.com/)在100$以下构建这台设备。
 
 {{<img src="win-ubuntu.jpg" alt="使用TinyPilot 连接两台电脑的照片" max-width="600px" caption="在Surface上通过TinyPilot控制Ubuntu 笔记本电脑" has-border="false">}}
 
@@ -32,7 +32,7 @@ TinyPilot 是一款我自制的远程控制设备，它开源并且构建的价�
 
 {{<img src="homelab-server.jpg" alt="我的homelab VM server 照片" caption="我于2017年搭建的用于托管虚拟机的homelab" max-width="650px" has-border="false">}}
 
-我使用ssh或者web界面去访问这台服务器，所以我没有给它配备显示器和键盘。这是一个方便的配置，但这也常常给我带来很多麻烦。
+我使用SSH或者Web界面去访问这台服务器，所以我没有给它配备显示器和键盘。这是一个方便的配置，但这也常常给我带来很多麻烦。
 
 有时因为我的一些操作失误（频率在几个月一次），会导致服务器无法启动、无法加入网络，导致我无法访问它。为了恢复运行，我不得不拔掉所有连接线，将服务器拖到我的桌子旁边，然后连接键盘、显示器以及各种线材到服务器。
 
@@ -90,11 +90,11 @@ ffplay -i udp://239.255.42.42:5004
 
 幸运的是，我偶然间发现了了一个更好的解决方案。
 
-### HDMI to USB 转换器HDMI to USB dongle
+### HDMI to USB 转换器
 
 当我浏览推特时，我看到了[Arsenio Dev的一条推文](https://twitter.com/Ascii211/status/1268631069051453448)，关于他刚刚购买的一个低价的HDMI to USB转换器。
 
-{{<img src="arsenio-dev-tweet.jpg" alt="Arsenio Dev的推文截图" caption="一篇[来自Arsenio Dev的推特](https://twitter.com/Ascii211/status/1268631069051453448) 启发我找到了更好的食品采集方式。" href="https://twitter.com/Ascii211/status/1268631069051453448" has-border="false">}}
+{{<img src="arsenio-dev-tweet.jpg" alt="Arsenio Dev的推文截图" caption="一篇[来自Arsenio Dev的推特](https://twitter.com/Ascii211/status/1268631069051453448) 启发我找到了更好的视频采集方式。" href="https://twitter.com/Ascii211/status/1268631069051453448" has-border="false">}}
 
 1080p&30帧/s采集视频，这个描述有点难以置信，我马上下单了。仅售$11并且包邮。我甚至不知道它的品牌名，所以之后我就叫他“HDMI转换器”吧。类似的商品有很多，这类商品的关键点在于[MS2109芯片](https://twitter.com/Ascii211/status/1268641527531741186)
 
@@ -144,7 +144,7 @@ ffplay.exe -i udp://@10.0.0.100:1234/stream
 
 当我发布了之前关于Key Mime Pi的帖子之后，我收到了来自Max Davaev的帖子，他鼓励我尝试他的项目[Pi-KVM](https://github.com/pikvm/pikvm).
 
-{{<img src="maxim-comment.png" alt="Max的评论截图：你好:) 看看这个项目：https://github.com/pikvm/pikvm 我们已经完成和调试了很多功能" caption="Max Devaev 指出它已经存在的 [Pi-KVM](https://github.com/pikvm/pikvm) 项目">}}
+{{<img src="maxim-comment.png" alt="Max的评论截图：你好:) 看看这个项目：https://github.com/pikvm/pikvm 我们已经完成和调试了很多功能" caption="Max Devaev 指出它已经存在的 [Pi-KVM](https://github.com/pikvm/pikvm) 项目。">}}
 
 {{<img src="melty-breadboard.jpg" align="right" alt="GPIO引脚照片" max-width="500px" caption="我之前使用面包板的经历包括[不小心把它们熔化了](https://mtlynch.io/greenpithumb/#why-make-another-raspberry-pi-gardening-bot)。" has-border="false">}}
 
@@ -225,7 +225,7 @@ TinyPilot 允许我去通过浏览器管理整个系统的安装过程。这比�
 - [树莓派4](https://smile.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TD42S27/)
 - [USB-C to USB-A 数据线](https://www.amazon.com/Anker-2-Pack-Premium-Charging-Samsung/dp/B07DC5PPFV/)
 - [HDMI to USB 转换器](https://www.ebay.com/itm/284886683842)
-  - 奇怪的是，这个商品能没有品牌名，但是你可以通过[外观](hdmi-dongle.jpg)
+  - 奇怪的是，这个商品竟然没有品牌名，但是你可以通过[外观](hdmi-dongle.jpg)
   - 它在eBay上的价格普遍为$11～15
 - [microSD 卡](https://smile.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/) (最低持续写入速度不低于10MB/秒, 空间为8 GB以上)
 - [HDMI to HDMI 线](https://smile.amazon.com/Cable-DisplayPort-marca-AmazonBasics-longitud/dp/B015OW3M1W/)
@@ -245,9 +245,9 @@ TinyPilot 允许我去通过浏览器管理整个系统的安装过程。这比�
 
 {{<img src="rufus-install.png" alt="Rufus软件截图" caption="我使用 [Rufus](https://rufus.ie) 来写入树莓派的 micro SD 卡，但任何磁盘映像工具都可以。" has-border="false">}}
 
-通过放置一个`ssh`文件在microSD卡的boot分区以启动SSH访问功能。降入您想通过无线网连接，我应该需要一个[`wpa_supplicant.conf` 文件](https://www.raspberrypi.org/documentation/configuration/wireless/headless.md).
+通过创建一个`ssh`文件在microSD卡的boot分区以启动SSH访问功能。如果您想通过无线网连接，还需要一个[`wpa_supplicant.conf` 文件](https://www.raspberrypi.org/documentation/configuration/wireless/headless.md).
 
-当你准备好 misroSD 卡之后，将他插入树莓派中。
+当你准备好 microSD 卡之后，将它插入树莓派中。
 
 ### 安装一个机壳 (可选的)
 
@@ -317,7 +317,7 @@ sudo reboot
 
 ## 使用 TinyPilot
 
-在运行玩脚本之后，TinyPilot就可以使用了，你可以通过这个地址去访问：
+在运行完脚本之后，TinyPilot就可以使用了，你可以通过这个地址去访问：
 
 - [http://raspberrypi/](http://raspberrypi/)
 
