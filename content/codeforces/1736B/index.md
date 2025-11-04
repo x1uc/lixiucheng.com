@@ -1,7 +1,6 @@
 ---
 title: "CF 1736B"
 date: 2025-10-24
-lastmod: 2025-10-25
 math: true
 ---
 
@@ -57,58 +56,4 @@ $$
 
 此时可以确定的是，$a_{i+1}$ 必然是 $b_{i+1}$ 和 $b_{i+2}$ 的公约数(⚠️这里是公约数而不是最大公约数)。
 
-由于 $x$ 和 $y$ 越大，会降低 $a_{i+1}$ 作为 $\gcd(b_{i+1}, b_{i+2})$ 的可能性，因此选择 $k=1$ 是最优的。
-
-## 收获
-
-- go a, b = x, y写法
-- 最大公约数最小公倍数
-- 如何构造
-
-```go
-package main
-
-import "fmt"
-
-func gcd(a int, b int) int {
-    if b == 0 {
-        return a
-    }
-    return gcd(b, a%b)
-}
-
-func lcm(a int, b int) int {
-    return a * b / gcd(a, b)
-}
-
-func solve() {
-    var n int
-    var arr [100005]int
-    var ans [100005]int
-    fmt.Scan(&n)
-    for i := 0; i < n; i++ {
-        fmt.Scan(&arr[i])
-    }
-    ans[0] = arr[0]
-    for i := 1; i < n; i++ {
-        ans[i] = lcm(arr[i-1], arr[i])
-    }
-    ans[n] = arr[n-1]
-    for i := 0; i < n; i++ {
-        if gcd(ans[i], ans[i+1]) != arr[i] {
-            fmt.Println("NO")
-            return
-        }
-    }
-    fmt.Println("YES")
-}
-
-func main() {
-    var t int
-    fmt.Scan(&t)
-    for t != 0 {
-        solve()
-        t--
-    }
-}
-```
+由于 $x$ 和 $y$ 越大，会降低 $a_{i+1}$ 作为 $\gcd(b_{i+1}, b_{i+2})$ 的最大性，因此选择 $k=1$ 是最优的。
