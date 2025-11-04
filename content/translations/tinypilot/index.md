@@ -22,7 +22,7 @@ TinyPilot 是一款我自制的远程控制设备，它开源并且构建的价�
 
 ## 我不想听你的故事，我只是想知道如何构建这个设备
 
-如果你只是被这个设备所吸引，不关心我开发过程中遇到的精彩和挫折，可以跳转到这个部分["怎样构建你自己的TinyPilot"](#Demo)
+如果你只是被这个设备所吸引，不关心我开发过程中遇到的精彩和挫折，可以跳转到这个部分[如何去构建你自己的tinypilot](#如何去构建你自己的tinypilot)
 
 {{<youtube IF-AyHJ8DOI>}}
 
@@ -34,7 +34,7 @@ TinyPilot 是一款我自制的远程控制设备，它开源并且构建的价�
 
 我使用ssh或者web界面去访问这台服务器，所以我没有给它配备显示器和键盘。这是一个方便的配置，但这也常常给我带来很多麻烦。
 
-有时因为我的一些操作失误（频率在几个月一次），会导致服务器无法启动、无法加入网络,导致我无法访问它。为了恢复运行，我不得不拔掉所有连接线，将服务器拖到我的桌子旁边，然后连接键盘、显示器以及各种线材到服务器。
+有时因为我的一些操作失误（频率在几个月一次），会导致服务器无法启动、无法加入网络，导致我无法访问它。为了恢复运行，我不得不拔掉所有连接线，将服务器拖到我的桌子旁边，然后连接键盘、显示器以及各种线材到服务器。
 
 ## 商业解决方案
 
@@ -70,7 +70,7 @@ Key Mime Pi 通过USB连接到目标机器，注册为键盘设备。它也提�
 
 关于视频采集的第一个尝试，我使用的是[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)。Daniel Kučera (aka [danman](https://blog.danman.eu/))对这款设备的逆向工程做了很多[贡献](https://blog.danman.eu/new-version-of-lenkeng-hdmi-over-ip-extender-lkv373a/)。这款设备可以在eBay上从中国商户那花40$买到，这是我当时能找到的最佳选择。
 
-{{<img src="lkv373a.jpg" alt="Lenkeng LKV373A HDMI延长器照片" caption="[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)是我尝试的第一款HDMI视频采集器." max-width="600px" has-border="false">}}
+{{<img src="lkv373a.jpg" alt="Lenkeng LKV373A HDMI延长器照片" caption="[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)是我尝试的第一款HDMI视频采集器。" max-width="600px" has-border="false">}}
 
 因为LKV373A发射器不是专业的视频采集设备，所以采集视频的过程非常棘手。LKV373A发射器预期的使用方式是和LKV373A接收器进行配对，将网络流转换为HDMI输出。在 danman的研究中，他发现一种方式去拦截&捕获视频输出流，但是因为LKV373A使用了非标准的RTP协议，导致绝大多数视频工具无法识别其格式。
 
@@ -136,7 +136,7 @@ ffplay.exe -i udp://@10.0.0.100:1234/stream
 
 {{<img src="dongle-ffmpeg.jpg" alt="使用ffmpeg从树莓派流式传输视频的延迟对比" caption="使用ffmpeg从树莓派流化视频时，视频延迟最高达到了10秒。" max-width="700px" has-border="false">}}
 
-我不确定延迟来自HDMI转换器，树莓派上的ffmpeg，还是我桌面端的ffplay。Arsenio Dev说延迟只有20毫秒，所以似乎可以通过深入研究[ffmpeg那晦涩难懂的命令行参数](https://ffmpeg.org/ffmpeg.html)去降低延迟。
+我不确定延迟来自HDMI转换器、树莓派上的ffmpeg，还是我桌面端的ffplay。Arsenio Dev说延迟只有20毫秒，所以似乎可以通过深入研究[ffmpeg那晦涩难懂的命令行参数](https://ffmpeg.org/ffmpeg.html)去降低延迟。
 
 又一次的幸运让我免于承担那项令人痛苦的任务。
 
@@ -144,7 +144,7 @@ ffplay.exe -i udp://@10.0.0.100:1234/stream
 
 当我发布了之前关于Key Mime Pi的帖子之后，我收到了来自Max Davaev的帖子，他鼓励我尝试他的项目[Pi-KVM](https://github.com/pikvm/pikvm).
 
-{{<img src="maxim-comment.png" alt="Max的评论截图：你好:) 看看这个项目：https://github.com/pikvm/pikvm 我们已经完成和调试了很多功能" caption="Max Devaev 指出它已经存在的 [Pi-KVM](https://github.com/pikvm/pikvm) 项目.">}}
+{{<img src="maxim-comment.png" alt="Max的评论截图：你好:) 看看这个项目：https://github.com/pikvm/pikvm 我们已经完成和调试了很多功能" caption="Max Devaev 指出它已经存在的 [Pi-KVM](https://github.com/pikvm/pikvm) 项目">}}
 
 {{<img src="melty-breadboard.jpg" align="right" alt="GPIO引脚照片" max-width="500px" caption="我之前使用面包板的经历包括[不小心把它们熔化了](https://mtlynch.io/greenpithumb/#why-make-another-raspberry-pi-gardening-bot)。" has-border="false">}}
 
@@ -164,7 +164,7 @@ ffplay.exe -i udp://@10.0.0.100:1234/stream
 
 {{<img src="ustreamer-1.jpg" alt="使用uStreamer和HDMI转换器实现500毫秒延迟" caption="uStreamer将我的延迟降低了15倍" max-width="700px" has-border="false">}}
 
-使用uStreamer之前，我不确定怎样把ffmpeg采集的视频呈现在用户的浏览器上，但是我知道这是可以做到的。我测试了这篇[教程](https://docs.peer5.com/guides/setting-up-hls-live-streaming-server-using-nginx/)，它演示了使用HLS协议将ffmpeg视频传输到nginx,但是这引入了更多的延迟。并且遗留了一些问题，如何在HDMI线缆插拔时启停流媒体、如何将视频转码为浏览器友好的格式。
+使用uStreamer之前，我不确定怎样把ffmpeg采集的视频呈现在用户的浏览器上，但是我知道这是可以做到的。我测试了这篇[教程](https://docs.peer5.com/guides/setting-up-hls-live-streaming-server-using-nginx/)，它演示了使用HLS协议将ffmpeg视频传输到nginx，但是这引入了更多的延迟。并且遗留了一些问题，如何在HDMI线缆插拔时启停流媒体、如何将视频转码为浏览器友好的格式。
 
 uStreamer 解决了所有的问题。它本身就运行了一个最小化的HTTP服务器，直接提供浏览器原生支持的[Motion JPEG](https://en.wikipedia.org/wiki/Motion_JPEG)格式。我既无需折腾 HLS 流媒体配置，也不必调试 ffmpeg 与 nginx 的对接问题。
 
@@ -200,7 +200,7 @@ Streaming Parameters Video Capture:
 
 HDMI 转换器已经使用Motion JPEG格式传输视频流！虽然uStreamer's硬件协助编码很快，但是这一步是没有必要的了。Motion JPEG已经可以被浏览器原生识别了。
 
-我配置uStreamer,让它跳过编码直接传输视频流。
+我配置uStreamer，让它跳过编码直接传输视频流。
 
 {{<img src="tinypilot-latency.jpg" max-width="700px" alt="消除重新编码步骤后200毫秒延迟的照片" caption="跳过树莓派上的额外重新编码步骤，延迟从600毫秒降低到200毫秒。" has-border="false">}}
 
@@ -323,7 +323,7 @@ sudo reboot
 
 {{<img src="tinypilot-hello-world.png" alt="TinyPilot网页界面截图" max-width="700px" caption="设置完成后，你可以在本地网络中通过 [http://raspberrypi/](http://raspberrypi/) 访问 TinyPilot 的网页界面。" has-border="false">}}
 
-## 电源问题The power problem
+## 电源问题
 
 这套设备最大的限制就是电源。依赖目标机器的电源意味着当目标机器关机时，树莓派会遭遇意外断电。
 
