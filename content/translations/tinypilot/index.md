@@ -4,8 +4,8 @@ srcDate: "2020-07-23"
 srcLink: "https://mtlynch.io/tinypilot/"
 srcAuthor: "Michael Lynch"
 
-title: "100$以内构建一台KVM Over IP设备"
-description: 100$以内构建一台KVM over IP设备
+title: "$100以内构建一台KVM Over IP设备"
+description: $100以内构建一台KVM over IP设备
 date: "2025-10-27"
 images:
   - /translations/tinypilot/opengraph.webp
@@ -16,7 +16,7 @@ images:
 {{</notice>}}
 TinyPilot 是一款我自制的远程控制设备，它开源并且构建的价格也很合适。它可以在操作系统启动之前就工作，所以你可以使用它为计算机安装操作系统，或者向我一样为我的[无头服务器](https://mtlynch.io/building-a-vm-homelab/)调试启动失败的问题。
 
-这篇帖子是我创建TinyPilot的过程，并且为你展示我如何使用[树莓派](https://www.raspberrypi.com/)在100$以下构建这台设备。
+这篇帖子是我创建TinyPilot的过程，并且为你展示我如何使用[树莓派](https://www.raspberrypi.com/)在$100以下构建这台设备。
 
 {{<img src="win-ubuntu.jpg" alt="使用TinyPilot 连接两台电脑的照片" max-width="600px" caption="在Surface上通过TinyPilot控制Ubuntu 笔记本电脑" has-border="false">}}
 
@@ -44,9 +44,9 @@ TinyPilot 是一款我自制的远程控制设备，它开源并且构建的价�
 
 随后我考察了商用的KVM over IP解决方案。这类设备功能与戴尔iDRAC类似，但属于外接装置，需要连接电脑的键盘(KeyBoard)、显示器(Video)和鼠标(Mouse)端口（KVM即由此得名）。遗憾的是其价格更为高昂，单台设备售价在500至1000美元之间。
 
-{{<img src="raritan-kvm.png" alt="Raritan Dominion KVM over IP购买页面截图" caption="商用的KVM over IP设备的价格在500$~1000$" max-width="800px">}}
+{{<img src="raritan-kvm.png" alt="Raritan Dominion KVM over IP购买页面截图" caption="商用的KVM over IP设备的价格在$500~$1000" max-width="800px">}}
 
-虽然我不愿意去来回来的搬服务器，但是为了节省插拔线缆的功夫而去花500$，实在有点说不过去，更何况一年只有几次。
+虽然我不愿意去来回来的搬服务器，但是为了节省插拔线缆的功夫而去花$500，实在有点说不过去，更何况一年只有几次。
 
 于是，我做了每个不够理性的程序员都会做的事：花了几百个小时打造自己的KVM over IP设备。
 
@@ -68,7 +68,7 @@ Key Mime Pi 通过USB连接到目标机器，注册为键盘设备。它也提�
 
 如果不知道屏幕上显示的是什么，那么键盘指令转发基本没什么用。所以我的下一步就是采集我服务器的显示，并将它输出到树莓派上，然后渲染视频到浏览器。
 
-关于视频采集的第一个尝试，我使用的是[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)。Daniel Kučera (aka [danman](https://blog.danman.eu/))对这款设备的逆向工程做了很多[贡献](https://blog.danman.eu/new-version-of-lenkeng-hdmi-over-ip-extender-lkv373a/)。这款设备可以在eBay上从中国商户那花40$买到，这是我当时能找到的最佳选择。
+关于视频采集的第一个尝试，我使用的是[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)。Daniel Kučera (aka [danman](https://blog.danman.eu/))对这款设备的逆向工程做了很多[贡献](https://blog.danman.eu/new-version-of-lenkeng-hdmi-over-ip-extender-lkv373a/)。这款设备可以在eBay上从中国商户那花$40买到，这是我当时能找到的最佳选择。
 
 {{<img src="lkv373a.jpg" alt="Lenkeng LKV373A HDMI延长器照片" caption="[Lenkeng LKV373A HDMI extender](https://smile.amazon.com/AEMYO-Extender-V3-0-Ethernet-Supports/dp/B01LGUT9HW/)是我尝试的第一款HDMI视频采集器" max-width="600px" has-border="false">}}
 
