@@ -6,6 +6,7 @@
   "devDependencies": {
     "netlify-cli": "^21.4.1",
     "prettier": "3.5.3",
-    "prettier-plugin-go-template": "^0.0.15"
+    "prettier-plugin-go-template": "^0.0.15",
+    "markdownlint-cli2": "^0.19.0"
   }
 }
