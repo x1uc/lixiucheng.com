@@ -25,4 +25,7 @@ echo "Checking for trailing whitespace..."
 echo "Checking for trailing newlines..."
 ./dev-scripts/check-trailing-newline
 
+echo "Markdown linting..."
+./dev-scripts/lint-markdown
+
 echo "All pre-commit checks passed!"
