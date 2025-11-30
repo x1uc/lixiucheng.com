@@ -10,11 +10,11 @@ description: TODO - One-line summary
 
 ## Goal grades
 
-At the start of each month, I declare what I'd like to accomplish. Here's how I did against those goals:
+每个月初，我都会设定自己想要完成的目标。以下是我完成这些目标的情况：
 
-### Goal 1
+### 语法课 + 新概念精讲&回译
 
-- **Result**: XX
+- **Result**: 语法课完成了3/4，
 - **Grade**: XX
 
 TODO
