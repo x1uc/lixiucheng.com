@@ -1,13 +1,13 @@
 ---
-title: "Educational Products: Month XX"
+title: "No Project: Month 1"
 date: "2025-11-30"
-description: TODO - One-line summary
+description: 第一个月的目标没有很好的达成。如何看到时间的价值？
 ---
 
 ## Highlights
 
 - 与其月末穷思竭虑的去想这个月都干了什么，每天花1分钟记录一下怎么样？
--
+- 发现错误要及时改，不管付出多大代价，往往都是最小的
 
 ## Goal grades
 
@@ -75,24 +75,30 @@ description: TODO - One-line summary
 段永平说他的本意是"欲速则不达"。我认为"fast is slow"也体现了他"not doing list"的哲学。不去强调"slow is right"，而是强调"fast is error"。
 {{</notice>}}
 
-## Topic 3
+我是一条路走到黑的性格，沉默成本很大程度上会影响我的判断。周末的时候和朋友去一条景区去溜达，说是景区其实就是一条街。
+正好这段时间景区在维护，走了一段时间之后我们看到了施工的挡板，住了左右的去向，但是还可以继续向前走，我就想着走到尽头一定有办法出去。
+但是随着越走越远，走了很久都没到头，这时候我的想法还是一直往前走，但是朋友这时候太饿了，他看了一眼地图发现还有很远才到头。这时候我们决定往回走。
 
-## Side projects
+认准了一个方向，一直走是容易的，常常不愿意停下来看看方向对不对，这是一种惰性。
+
+做一个事也像是一段旅途，发现错误要及时改，不管付出多大代价，往往都是最小的。
 
 ## Wrap up
 
 ### What got done?
 
--
+- 英语语法：句子组成、从句、不定式
+- 在一次的陷入nvim、lazygit这种cool tool的学习中
+- 一些关于网络代理相关的学习（IPV6、relay、dialer-proxy）
 
 ### Lessons learned
 
--
+- 与其月末穷思竭虑的去想这个月都干了什么，每天花1分钟记录一下怎么样，看到时间的价值
+- 认准了一个方向，一直走是容易的，常常不愿意停下来看看方向对不对，这是一种惰性
+- 沉默成本
 
 ### Goals for next month
 
--
-
-### Requests for help
-
-TODO
+- 英语语法入门剩下的一个章节 & 3篇新概念英语精读&回译
+- kenlive | shotcut 学习 & 发布一个机型统计视频
+- 找到好玩的开源项目贡献PR
