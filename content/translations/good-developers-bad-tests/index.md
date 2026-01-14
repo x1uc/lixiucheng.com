@@ -35,7 +35,7 @@ images:
 **生产代码的核心在于良好的结构(well-factored)；测试代码的核心在于 _直观_.**
 {{</notice>}}
 
-{{<img src="dane-deaner-272363-unsplash-cropped.jpg" alt="Image of a ruler" max-width="325px" align="right" href="https://unsplash.com/photos/JNpmCYZID68">}}
+{{<img src="dane-deaner-272363-unsplash-cropped.jpg" alt="Image of a ruler" max-width="325px" align="right">}}
 
 我们讨论一下尺子这种工具。它之所以能存在数百年，就是因为它不复杂，使用简单。假如我制作了一把"德古拉尺"，它的单位是"德古拉"，"德古拉"与厘米有一定的转换关系。你需要使用一张换算表去进行换算。
 
