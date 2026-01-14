@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+
+# Echo commands to console.
+set -x
+# Exit on first failing command.
+set -e
+
+# Function to check if a command exists
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+echo "Starting local CI checks..."
+
+# 1. Install Dependencies
+echo "--- Installing NPM dependencies ---"
+if [ ! -d "node_modules" ]; then
+    npm install
+else
+    echo "node_modules exists, skipping install (run 'npm install' manually if needed)"
+fi
+
+# 2. Whitespace Checks
+echo "--- Checking Whitespace ---"
+./dev-scripts/check-trailing-whitespace
+./dev-scripts/check-trailing-newline
+
+# 3. Formatting
+echo "--- Checking Formatting ---"
+./dev-scripts/check-formatting
+
+# 4. Markdown Linting
+echo "--- Linting Markdown ---"
+./dev-scripts/lint-markdown
+
+# 5. Build Site
+echo "--- Building Site ---"
+if command_exists hugo; then
+    hugo version
+    hugo --minify
+else
+    echo "ERROR: 'hugo' is not installed. Cannot build site. Skipping build-dependent checks."
+    exit 1
+fi
+
+# 6. HTML Linting (Requires Build)
+echo "--- Linting HTML ---"
+if command_exists htmlproofer; then
+    # Run with --quick to skip external link checks locally by default,
+    # as they can be slow and flaky. Use ./dev-scripts/test-local --full to run full checks.
+    if [ "${1-}" = "--full" ]; then
+        ./dev-scripts/lint-html
+    else
+        echo "Running quick HTML check (skipping external links). Use --full to check external links."
+        ./dev-scripts/lint-html --quick
+    fi
+else
+    echo "WARNING: 'htmlproofer' is not installed (Ruby gem). Skipping HTML linting."
+    echo "To install: gem install html-proofer"
+fi
+
+# 7. XML Linting
+echo "--- Linting XML ---"
+if command_exists xmllint; then
+    ./dev-scripts/lint-xml
+else
+    echo "WARNING: 'xmllint' is not installed. Skipping XML linting."
+    echo "To install (Debian/Ubuntu): sudo apt-get install libxml2-utils"
+fi
+
+# 8. SEO Metadata Check
+echo "--- Checking SEO Metadata ---"
+./dev-scripts/check-seo-metadata
+
+echo "SUCCESS: All local checks passed!"
