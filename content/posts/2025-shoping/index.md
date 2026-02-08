@@ -1,9 +1,9 @@
 ---
-title: "过去一年买了什么[2026 Edition]"
+title: "过去一年买了什么 (2026 Edition)"
 date: 2026-02-08
-description:
+description: 分享一下过去一年买的有意思的产品，以及我的使用感受
 images:
-  - 2025-shoping/neofetch.png
+  - 2025-shoping/cover.jpg
 ---
 
 ## 过去一年都买了啥
@@ -68,6 +68,7 @@ images:
 
 这把键盘算是我买过最糟糕的键盘了，触发压力大，手感涩，[无线连接不稳定](#倍思bf1-开放式蓝牙耳机-small-stylecolorgrey150small)
 
+{{<img src="rapoo.jpg" max-width="350px" >}}
 **Cons**
 
 - 无线信号不稳定
