@@ -66,10 +66,10 @@ description: 第一个月的目标没有很好的达成。如何看到时间的�
 
 - 做对的事情，把对的事情做对
 - 发现错误要及时改，不管付出多大代价，往往都是最小的
-- not doing list
+- stop doing list
 - fast is slow
 
-"fast is slow"，段永平说他想表达的意思是"欲速则不达"。我认为"fast is slow"也体现了他"not doing list"的哲学。不去说"slow is right"，而是说"fast is error"。
+"fast is slow"，段永平说他想表达的意思是"欲速则不达"。我认为"fast is slow"也体现了他"stop doing list"的哲学。不去说"slow is right"，而是说"fast is error"。
 
 我是一条路走到黑的性格，沉默成本很大程度上会影响我的判断。周末的时候和朋友去一个景区溜达，说是景区其实就是一条街。
 正好这段时间景区在维护，走了一段时间之后我们看到了施工的挡板，挡住了左右的去向，但是还可以继续向前走，我就想着走到尽头一定有办法出去。
