@@ -1,12 +1,13 @@
 ---
-title: "Project: Month 3"
+title: "No Project: Month 3"
 date: "2026-02-08"
 description: 压力与控制欲
 ---
 
 ## Highlights
 
--
+- 压力的直观感受，解压的方法
+- 控制欲
 
 ## Goal grades
 
