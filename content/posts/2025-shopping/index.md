@@ -3,7 +3,7 @@ title: "过去一年买了什么 (2026 Edition)"
 date: 2026-02-08
 description: 分享一下过去一年买的有意思的产品，以及我的使用感受
 images:
-  - 2025-shoping/cover.jpg
+  - 2025-shopping/cover.jpg
 ---
 
 ## 过去一年都买了啥
