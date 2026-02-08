@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "mtlynch.io dev environment",
   "author": "Michael Lynch",
+  "scripts": {
+    "test": "./dev-scripts/test-local"
+  },
   "devDependencies": {
     "netlify-cli": "^21.4.1",
     "prettier": "3.5.3",
