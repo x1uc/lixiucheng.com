@@ -33,7 +33,7 @@ description: 定义结束状态
 
 我做的是一个统计类的视频，最初的封面我借鉴了我认为很好的一个封面，我认为这个封面传递信息做得很好，并且字体的色彩我认为也很不错。我做的基本上就是把背景换成了视频主题相关的，然后把文字改成了：“统计 XXX 人群的用机偏好”。
 
-{{<img src="cover.png" alt="" caption="我第一版封面所借鉴的封面"  max-width="525px" align="center">}}
+{{<img src="cover.png" alt="" caption="我第一版封面所借鉴的封面" max-width="525px" align="center">}}
 
 发布之后，点击量很低。两天之后，播放量还没超过 200。我花了很多时间做的视频，并且之前已经经过验证了，播放量这么低我很不甘心。我发现我的封面确实很不好，作为一个统计视频，观众最关注的是数据相关的部分。
 
@@ -44,9 +44,9 @@ description: 定义结束状态
 
 想到这一点之后，我把封面改成了这样。突出人数和统计结果。播放量开始上涨。
 
-{{<img src="final-cover.png"  caption="视频最终的封面"  max-width="525px" align="center">}}
+{{<img src="final-cover.png" caption="视频最终的封面" max-width="525px" align="center">}}
 
-{{<img src="five-star.png"  caption="封面的吸引力被评为 5 星"  max-width="525px" align="center">}}
+{{<img src="five-star.png" caption="封面的吸引力被评为 5 星" max-width="525px" align="center">}}
 
 ### 找到好玩儿的开源项目贡献 PR
 
@@ -63,7 +63,7 @@ description: 定义结束状态
 
 中间程序修改了很多次，因为最初只是玩票性质，所以没有很好地规划过，扩展的时候也是想到哪写到哪。但我大致想了一下，需求不是特别复杂，拆分也很简单，计划这个月去重写一下这个统计程序。
 
-## Clair Obscur: Expedition 33 （剧透）
+## Clair Obscur: Expedition 33（剧透）
 
 大学以来基本没怎么用心玩过单机游戏了，《双人成行》和《33 号远征队》是我唯二通关的单机游戏。
 
