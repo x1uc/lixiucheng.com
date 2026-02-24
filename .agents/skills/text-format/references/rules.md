@@ -8,7 +8,7 @@ Other languages:
 - [繁体中文](README.md)
 - [简体中文](README.zh-Hans.md)
 
-* * *
+---
 
 ## 空格
 
@@ -84,7 +84,7 @@ Other languages:
 
 ### 用 `text-spacing` 来挽救？
 
-CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#text-spacing-property) 和 Microsoft 的 [`-ms-text-autospace`](https://msdn.microsoft.com/library/ms531164(v=vs.85).aspx) 可以实现自动为中英文之间增加空白。不过目前并未普及，另外在其他应用场景，例如 macOS、iOS、Windows 等用户界面目前并不存在这个特性，所以请继续保持随手加空格的习惯。
+CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#text-spacing-property) 和 Microsoft 的 [`-ms-text-autospace`](<https://msdn.microsoft.com/library/ms531164(v=vs.85).aspx>) 可以实现自动为中英文之间增加空白。不过目前并未普及，另外在其他应用场景，例如 macOS、iOS、Windows 等用户界面目前并不存在这个特性，所以请继续保持随手加空格的习惯。
 
 ## 标点符号
 
@@ -150,7 +150,7 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 
 > 乔布斯那句话是怎么说的？「Stay hungry, stay foolish.」
 >
-> 推荐你阅读 *Hackers & Painters: Big Ideas from the Computer Age*，非常地有趣。
+> 推荐你阅读 _Hackers & Painters: Big Ideas from the Computer Age_，非常地有趣。
 
 错误：
 
