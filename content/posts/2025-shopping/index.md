@@ -181,7 +181,7 @@ Apple Watch的使用体验还是很不错的，尤其是数据可视化这方面
 
 （2026/02/08，树莓派4B 4G的价格为¥570
 
-{{<video src="output.mp4">}}
+{{<video src="tinypilot.mp4">}}
 
 ## Summary
 
