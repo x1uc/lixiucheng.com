@@ -1,0 +1,169 @@
+[明确目标或有明确执行方式]
+Earn my first dollar of revenue from WanderJest.
+Conduct eight interviews for WanderJest with comedians, bookers, promoters, and venue owners.
+Publish a follow up to “My First Year as a Solo Developer,” about year two.
+Make $1 in revenue (for real this time).
+Get 20 new user signups.
+Reach 2,000 unique visitors.
+Get 40 new user signups to WanderJest.
+Conduct eight customer interviews.
+Present my talk at NERD Summit.
+Limit work to eight hours a day and check social media only as scheduled.
+Conduct five customer interviews for the portfolio rebalancer.
+Implement customer payments for the portfolio rebalancer and either hide or limit the free version.
+Publish one new blog post.
+Add 100 new articles to Is It Keto (a ~50% increase in the current corpus size).
+Publish one new blog post.
+Add 30 new articles to Is It Keto.
+Create a working Pi-based KVM over IP, controllable through the web browser.
+Publish a blog post about KVM Pi.
+Sell 10 KVM Pi units.
+Write up the interviews I promised to my keto interviewees.
+Sell 60 TinyPilot kits and power connectors.
+Test three new marketing channels.
+Interview seven IT professionals about whether they’d use TinyPilot in their work.
+Sell 60 TinyPilot kits and power connectors.
+Test three new marketing channels.
+Interview seven IT professionals about whether they’d use TinyPilot in their work.
+Release a high-end version of TinyPilot that arrives pre-assembled in a custom case.
+Release the first version of TinyPilot Pro.
+Release the first version of TinyPilot Pro.
+Receive TinyPilot reviews from two bloggers or YouTubers with a relevant audience.
+Record five out of seven parts to my Hacker News course.
+Hire a freelance developer to help with TinyPilot development.
+Receive TinyPilot reviews from two bloggers or YouTubers with a relevant audience.
+Earn $4k in revenue from Hit the Front Page of Hacker News.
+Attract five bloggers or YouTubers to a TinyPilot affiliate program.
+Add two features to TinyPilot that reduce support or manufacturing costs.
+Collect feedback from 10 customers about a potential rack-mounted version of TinyPilot.
+Increase TinyPilot revenue to $30k
+Produce a prototype for a custom TinyPilot PoE HAT
+Create an outline for my book, Refactoring English
+Increase TinyPilot’s revenue to $33k.
+Fully migrate TinyPilot’s operations to our new office.
+Gather feedback on the table of contents for Refactoring English and iterate on it.
+Publish a new release of TinyPilot.
+Earn $35k in TinyPilot revenue.
+Create a prototype of the TinyPilot Voyager 2, with built-in Power over Ethernet.
+Define processes that allow TinyPilot’s local staff to share and alternate on all tasks.
+Find a designer for the TinyPilot sales site.
+Find an electrical engineering firm that can create a PoE adaptor for TinyPilot Voyager.
+Finalize the design of the Voyager 2.
+Publish a sample chapter of Refactoring English.
+Publish a sample chapter of Refactoring English
+Start development on a monthly service-based software complement to TinyPilot
+Finalize the design of the Voyager 2
+Train local staff members to assist with customer support.
+Start development on a monthly service-based software complement to TinyPilot.
+Complete TinyPilot’s website rebrand.
+Complete TinyPilot’s website rebrand.
+Hire a marketing firm or freelancer to help TinyPilot explore paid marketing channels.
+Launch Voyager 2: PoE Edition
+Write a job description for TinyPilot support engineer and begin interviewing candidates.
+Publish my fourth annual retrospective
+Publish TinyPilot Pro 2.4.0
+Wrap up design overhaul of the TinyPilot website
+Complete onboarding for TinyPilot’s new support engineer
+Publish a blog post and video about building a homelab NAS server with TinyPilot.
+Complete the TinyPilot website redesign.
+Publish a release of TinyPilot Pro with opt-in experimental support for H264 video over WebRTC.
+Publish a blog post and video about building a homelab NAS server with TinyPilot.
+Complete the TinyPilot website redesign.
+Hire a marketing agency or freelancer.
+Create a self-contained tarball for installing TinyPilot.
+Complete the first draft of a full-length blog post about the TinyPilot website redesign.
+Increase ROAS on paid search ads to 2.0.
+Finalize plans for managing TinyPilot licenses.
+Migrate TinyPilot Community to the next-generation update system.
+Publish the blog post about the TinyPilot website redesign.
+Migrate TinyPilot Community and TinyPilot Pro to the next-generation update system
+Finalize plans for managing TinyPilot licenses
+Send TinyPilot Voyager to two YouTube creators or bloggers for review
+Migrate TinyPilot Pro to the next-generation update system.
+Send TinyPilot Voyager to two YouTube creators or bloggers for review
+Continue onboarding new support engineers.
+Fulfill the first order from our 3PL vendor.
+Reach code complete on the next TinyPilot Pro release.
+Prepare for a January launch of TinyPilot Voyager 2a.
+Ship the first Voyager 2a device.
+Write my fifth annual retrospective.
+Get back to our normal level of ready-to-ship TinyPilot devices.
+Transition fulfillment of a low-volume product to our new 3PL.
+Present at NERD Summit 2023.
+Transition all products to our 3PL vendor.
+Choose a contract manufacturer to take over TinyPilot’s device assembly and begin the transition process.
+Publish a new release of TinyPilot Pro.
+Onboard the newest TinyPilot employee.
+Reach $90k in revenue.
+Find three homelab bloggers or YouTubers interested in reviewing TinyPilot Voyager 2a.
+Start a manufacturing batch with a new contract manufacturer.
+Publish TinyPilot Pro 2.6.0.
+Reach $95k in revenue.
+Reach $98k in sales revenue.
+Spend less than 40% of my time on email.
+Delegate tasks for clearing the TinyPilot office.
+Use up all remaining Raspberry Pis to build TinyPilot devices.
+Reduce manual effort from TinyPilot’s software release process.
+Conduct five customer outreach calls.
+Clear the TinyPilot office of all old inventory and spare parts.
+Complete design work for TinyPilot license checking.
+Create a process for spot-checking each manufacturing batch of new devices.
+Handle TinyPilot’s end-of-year tax chores.
+Publish TinyPilot Pro 2.6.3.
+Document TinyPilot Pro’s release process internally.
+File 2023 taxes.
+Fill the gaps in TinyPilot’s release documentation.
+Complete 2023 taxes.
+Begin conversations with three new potential TinyPilot distributors or sales channels.
+Oversee development of two new TinyPilot software features.
+Finish recording my course.
+Begin selling my course.
+Complete and publish a chapter of Refactoring English.
+Finish two chapters of Refactoring English.
+Work with a designer to complete the cover design for Refactoring English.
+Write a blog post about lessons from Kickstarter.
+Complete a new book chapter or teach a live session about a topic from the book.
+Coordinate rewards with all the Kickstarter backers who opted for a public thanks or editorial help with a blog post.
+Publish two chapters of my book to pre-order readers.
+Assign soft writing time limits to every chapter of my book.
+Adapt preview chapters of my book to Asciidoc.
+Talk to at least 10 readers I haven’t spoken to before.
+Publish a new chapter of Refactoring English.
+Write personalized emails to 20 readers I haven’t spoken to before.
+Publish a new chapter of Refactoring English.
+Publish a new chapter of Refactoring English.
+Write personalized emails to 20 readers I haven’t spoken to before.
+Set up editing discounts for readers who have read the book.
+Create a list of early access customers to reach out to.
+Publish a new chapter of the book.
+Publish two new book chapters.
+Reach out to 10 readers.
+Create a tool or blog post that brings people to the Refactoring English website.
+Publish three chapters of Refactoring English.
+Publish my 2025 annual review (year 8).
+Publish two chapters of Refactoring English.
+Schedule a live event for Refactoring English readers.
+Clear the backlog of my marketing ideas.
+Complete my remaining marketing tasks.
+
+[期望性质（执行方式不明确）]
+Validate ideas for a sister product to Is It Keto.
+Figure out how to properly track the source of customers who end up completing purchases.
+Get my EU partner ready to begin sales by the end of August.
+Help my EU distributor achieve his first sale.
+Prepare for Voyager 2 launch as soon as the hardware is ready.
+Explore new case manufacturing options
+Prepare to transition TinyPilot’s fulfillment to a 3PL vendor.
+Reduce projects where I’m in the critical path.
+Prepare to transition fulfillment to our 3PL vendor in February.
+Start the process of transitioning to a new 3PL vendor.
+Begin cross-team collaboration between the developers and support engineers.
+Reduce load on fulfillment team so that reactive tasks occupy less than 80% of their time.
+Stay on schedule for TinyPilot’s shift to our contract manufacturer.
+Shift manufacturing to our contract manufacturer as quickly as possible.
+Shift manufacturing to our contract manufacturer as quickly as possible.
+Create a plan for better enforcement of TinyPilot Pro licenses.
+Shift manufacturing to our contract manufacturer as quickly as possible.
+Coordinate with manufacturer on production planning for the rest of 2024.
+Enjoy family time.
+Publish something that attracts new readers to the Refactoring English website.
