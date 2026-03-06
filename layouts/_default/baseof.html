@@ -156,6 +156,11 @@
       href="{{ .Site.Params.favicon_16 | absURL }}"
       sizes="16x16"
     />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{{ "/favicon.ico" | absURL }}"
+    />
 
     {{ if gt (len .AlternativeOutputFormats) 0 -}}
       {{ range .AlternativeOutputFormats -}}
