@@ -12,21 +12,14 @@ description: TODO - One-line summary
 
 每个月初，我都会设定自己想要完成的目标。以下是我完成这些目标的情况：
 
-### 语法课 + 新概念精讲&回译
-
-- **Result**: 语法课完成了3/4，
-- **Grade**: XX
-
-TODO
-
-### Goal 2
+### Goal 1
 
 - **Result**: XX
 - **Grade**: XX
 
 TODO
 
-### Goal 3
+### Goal 2
 
 - **Result**: XX
 - **Grade**: XX
