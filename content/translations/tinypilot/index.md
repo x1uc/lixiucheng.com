@@ -361,3 +361,7 @@ TinyPilot 的软件是开源的，开源协议是 [MIT license](https://opensour
 ---
 
 特别感谢 Max Devaev 在 uStreamer 项目上的卓越贡献，以及他为 TinyPilot 所付出的努力。
+
+## 我的构建
+
+{{<video src="tinypilot.mp4">}}
