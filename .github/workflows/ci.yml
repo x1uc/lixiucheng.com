@@ -32,7 +32,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24.15.0
           cache: npm
 
       - name: Install npm packages
@@ -51,7 +51,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24.15.0
           cache: npm
 
       - name: Install npm packages
@@ -70,7 +70,7 @@ jobs:
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 0.139.3
+          hugo-version: 0.147.5
 
       - name: Restore generated resources cache
         uses: actions/cache@v5
@@ -82,7 +82,7 @@ jobs:
         run: hugo version && hugo --minify
 
       - name: Upload generated site
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: public
           path: public
@@ -99,7 +99,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download generated site
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: public
           path: public
@@ -116,7 +116,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download generated site
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: public
           path: public
@@ -136,7 +136,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download generated site
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: public
           path: public
@@ -154,7 +154,7 @@ jobs:
       cancel-in-progress: false
     steps:
       - name: Download generated site
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: public
           path: public
@@ -162,7 +162,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 20.0.0
+          node-version: 24.15.0
 
       - name: Remove base tag from generated HTML
         run: find public -name "*.html" -exec sed -i -e 's/<base[^>]*>//g' {} +
@@ -188,7 +188,7 @@ jobs:
       cancel-in-progress: false
     steps:
       - name: Download generated site
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: public
           path: public
@@ -196,7 +196,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 20.0.0
+          node-version: 24.15.0
 
       - name: Deploy to production
         run: npx wrangler@4.20.5 pages deploy public --project-name=xiuc --branch=main

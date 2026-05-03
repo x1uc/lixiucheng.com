@@ -27,7 +27,7 @@ hasCJKLanguage = true
     unsafe= true
 
 [permalinks]
-    posts = "/:filename/"
+    posts = "/:contentbasename/"
 
 [params]
     dateFormat = "January 2, 2006"
