@@ -148,12 +148,6 @@ Plug & Play 的 A 卡，最后在闲鱼上淘到了这张 RX 7600。
 
 ### SANC G7U <small style="color:grey">¥1240</small>
 
-> I distinctly recall the joy I felt when I was 11 years old, and my dad came back from CompUSA and presented me with a box containing one of the largest monitors available, which was probably a 17" CRT. “Given the amount of time you’ll spend looking at your monitor,” he explained, “we might as well invest in a good one.” For context, both of my parents are programmers, and from a young age, I spent most of my free time at a computer.
->
-> Ever since then, I’ve used my dad’s logic to justify buying premium monitors, and it’s served me well. I’m at my computer for 2500 hours per year. On a per-hour basis, the cost of a high-end monitor is basically nil.
->
-> — _[Building my new development desktop](https://mtlynch.io/retrospectives/2024/12/#building-my-new-development-desktop)_
-
 因为最开始打算买 Mac Mini（软件生态 + 类 Unix 终端），所以选了一块 4K 的屏幕。后面发现我的主机搭配 KDE Plasma 桌面环境的使用效果很优秀。5500GT 的核显就能保证日常 4K/120 Hz 的需求，原生 Linux 的开发体验也非常棒。
 
 没体验过特别好/差的屏幕，所以我也没法评价，但是这一段时间使用下来，没有遇到任何问题，4K 的清晰度是真的高。
