@@ -32,37 +32,18 @@ hasCJKLanguage = true
 [params]
     dateFormat = "January 2, 2006"
     author = "Xiuc"
-    info = "By day, a simple software engineer. By night, also a software engineer."
-    description = "Updates about my life and what I learn about creating software"
-    twitter = "deliberatecoder"
-    currentproject = "Educational Products"
-    keywords = "blog,developer,personal"
     avatarurl = "images/avatar.jpg"
     since = "2024"
-    footercontent = "power by <a href=\"https://github.com/mtlynch/mtlynch.io\" target=\"_blank\">mtlynch.io</a>"
+    footercontent = "power by <a href=\"https://github.com/x1uc/lixiucheng.com\" target=\"_blank\">lixiucheng.com</a>"
 
     favicon_32 = "/images/favicon/favicon-32x32.jpg"
     favicon_16 = "/images/favicon/favicon-16x16.jpg"
 
     hidecredits = false
     hidecopyright = false
-
-     popularPosts = [
-      "i-sold-tinypilot",
-      "why-i-quit-google",
-      "tinypilot-redesign",
-      "code-review-love",
-      "human-code-reviews-1",
-      "tinypilot",
-      "stole-siacoins"
-    ]
-
+    popularPosts = []
     rtl = false
-
     photoWidths = [300, 600, 800, 1200]
-
-    talkyardServerUrl = "https://comments.mtlynch.io"
-    talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
 
 [imaging]
 quality = 90
@@ -76,14 +57,14 @@ resampleFilter = "Lanczos"
     weight = 1
     url  = "/posts/"
 [[menu.main]]
-    name = "Translatations"
+    name = "翻译"
     weight = 2
     url = "/translations/"
 [[menu.main]]
-    name = "Retrospectives"
+    name = "月度回顾"
     weight = 3
     url = "/retrospectives/"
 [[menu.main]]
-    name = "About"
+    name = "关于"
     weight = 4
     url = "/about/"
