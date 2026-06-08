@@ -8,3 +8,10 @@ config-preview.toml
 .netlify/state.json
 node_modules/
 .idea/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
