@@ -12,7 +12,7 @@ description: 月度回顾暂停
 
 我是一个不懂吃的人。看到别人分享一长串的美食清单，我有时候就很纳闷，他们是对好吃的要求比较低，还是我太不会吃了。
 
-{{<img src="foods.png" align="center" caption="社交媒体上的美食分享帖子" max-width="350px">}}
+{{<img src="foods.jpg" align="center" caption="社交媒体上的美食分享帖子" max-width="350px">}}
 
 从小到大真让我感觉到「吃美了」的就只有一顿饭。
 
