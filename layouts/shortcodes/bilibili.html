@@ -1,0 +1,26 @@
+{{ $src := .Get "src" }}
+{{ $bvid := .Get "bvid" }}
+{{ $page := .Get "p" | default "1" }}
+{{ $caption := .Get "caption" }}
+{{ $maxWidth := .Get "max-width" | default "800px" }}
+{{ $title := .Get "title" | default "Bilibili video player" }}
+
+{{ if not $src }}
+  {{ if not $bvid }}
+    {{ errorf "bilibili shortcode requires either src or bvid: %s" .Position }}
+  {{ end }}
+  {{ $src = printf "//player.bilibili.com/player.html?isOutside=true&bvid=%s&p=%s" $bvid $page }}
+{{ end }}
+
+<figure class="video bilibili" style="max-width: {{ $maxWidth }}">
+  <div class="bilibili-inner">
+    <iframe
+      src="{{ $src | safeURL }}"
+      title="{{ $title }}"
+      scrolling="no"
+      allowfullscreen></iframe>
+  </div>
+  {{ if $caption }}
+    <figcaption><p>{{ $caption | markdownify }}</p></figcaption>
+  {{ end }}
+</figure>

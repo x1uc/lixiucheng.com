@@ -40,6 +40,8 @@ description: 月度回顾暂停
 
 ## Blog Wander 插件
 
+{{<bilibili bvid="BV1HtjV6JERb" caption="Blog Wander 插件介绍">}}
+
 我一直不怎么擅长读书籍，但是内容载体同样是文字的博客，我经常能连续读几个小时。
 
 之前和同事聊天的时候，我经常会分享我看到的博客。有天同事问我：「有没有什么可以像知乎一样刷的博客？」
