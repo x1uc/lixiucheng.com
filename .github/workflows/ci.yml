@@ -71,6 +71,7 @@ jobs:
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 0.147.5
+          extended: true
 
       - name: Restore generated resources cache
         uses: actions/cache@v5
