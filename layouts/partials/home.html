@@ -5,11 +5,15 @@
 
       <ul>
         {{ range ( where .Site.RegularPages "Section" "ne" "codeforces" | first 15 ) }}
+          {{ $sectionName := .Section }}
+          {{ if eq .Section "game-reports" }}
+            {{ $sectionName = "game-reports" }}
+          {{ end }}
           <li>
             {{ .Date.Format "2006-01-02" }}:
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             <a class="tag tag-{{ .Section }}" href="/{{ .Section }}/"
-              >{{ .Section }}</a
+              >{{ $sectionName }}</a
             >
           </li>
         {{ end }}

@@ -10,9 +10,9 @@
       <p class="date">
         {{ .Date.Format .Site.Params.dateFormat }}
       </p>
-      <p>My rating: <strong>{{ .Page.Params.rating }}</strong> / 10</p>
+      <p>我的评分：<strong>{{ .Page.Params.rating }}</strong> / 10</p>
       {{ .Summary }}
-      <a class="full-review-link" href="{{ .RelPermalink }}">Full review</a>
+      <a class="full-review-link" href="{{ .RelPermalink }}">查看全文</a>
     </div>
   </div>
 </li>

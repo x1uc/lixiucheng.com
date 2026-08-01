@@ -5,20 +5,20 @@ rating: TODO
 purchase_url: TODO
 ---
 
-TODO: Short summary
+TODO: 简短摘要
 
 <!--more-->
 
 ---
 
-## What I liked
+## 喜欢的地方
 
 -
 
-## What I disliked
+## 不喜欢的地方
 
 -
 
-## Key takeaways
+## 关键收获
 
 -

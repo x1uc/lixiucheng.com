@@ -326,7 +326,7 @@ h4 {
       }
     }
 
-    &.book-reports-list {
+    &.game-reports-list {
       li {
         margin: 2rem 0;
 
@@ -439,8 +439,8 @@ h4 {
   }
 }
 
-.book-reports {
-  .book-cover {
+.game-reports {
+  .game-cover {
     @media screen and (min-width: 768px) {
       max-width: 300px;
       padding-right: 1rem;

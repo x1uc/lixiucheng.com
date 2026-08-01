@@ -5,13 +5,13 @@
     </header>
 
     <a href="{{ .Params.purchase_url }}">
-      <img src="cover.jpg" class="align-left book-cover" />
+      <img src="{{ .RelPermalink }}cover.jpg" class="align-left game-cover" />
     </a>
 
-    <ul class="book-summary">
-      <li>My rating: <strong>{{ .Params.rating }}</strong> / 10</li>
+    <ul class="game-summary">
+      <li>我的评分：<strong>{{ .Params.rating }}</strong> / 10</li>
       <li>
-        <a href="{{ .Params.purchase_url }}"> Purchase Link </a>
+        <a href="{{ .Params.purchase_url }}">购买链接</a>
       </li>
     </ul>
 

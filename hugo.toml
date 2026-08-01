@@ -65,6 +65,10 @@ resampleFilter = "Lanczos"
     weight = 3
     url = "/retrospectives/"
 [[menu.main]]
-    name = "关于"
+    name = "游戏分析"
     weight = 4
+    url = "/game-reports/"
+[[menu.main]]
+    name = "关于"
+    weight = 5
     url = "/about/"
