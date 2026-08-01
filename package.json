@@ -4,7 +4,9 @@
   "description": "mtlynch.io dev environment",
   "author": "Michael Lynch",
   "scripts": {
-    "test": "./dev-scripts/test-local"
+    "serve": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./dev-scripts-win/serve.ps1",
+    "test": "./dev-scripts/test-local",
+    "test:win": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./dev-scripts-win/test-local.ps1"
   },
   "devDependencies": {
     "netlify-cli": "^21.4.1",
