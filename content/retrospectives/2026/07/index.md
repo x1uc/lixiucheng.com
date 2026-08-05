@@ -6,7 +6,8 @@ description: 小丑牌 + 俄罗斯方块有没有搞头
 
 ## Highlights
 
-- 摘下镣铐跳舞
+- 关于 Save-Load 的思考
+- 找到开发游戏的方向
 
 ## Goal grades
 
@@ -72,7 +73,6 @@ description: 小丑牌 + 俄罗斯方块有没有搞头
 - Unity 和 Godot 游戏框架入门
 - 体验游戏（小丑牌和杀戮尖塔）
 - 写第一篇游戏分析文章
-
 
   {{<img src="daily_note.png">}}
 
