@@ -1,6 +1,6 @@
 baseurl = "https://lixiucheng.com"
 title = "I'm Xiuc"
-languagecode = "zh-cn"
+locale = "zh-cn"
 defaultcontentlanguage = "zh-cn"
 
 timeout = 300000
