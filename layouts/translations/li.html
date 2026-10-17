@@ -1,16 +1,6 @@
-{{ $image := "" }}
-{{ if .Page.Params.hero_image }}
-  {{ $image = printf "%s%s" .RelPermalink .Page.Params.hero_image }}
-{{ else }}
-  {{- with .Page.Params.images -}}
-    {{ $image = printf "%s"  (index . 0) }}
-  {{ end }}
-{{ end }}
-
-
 <li>
   <a class="img-wrapper" href="{{ .RelPermalink }}">
-    <img src="{{ $image }}" />
+    {{ partial "list-image.html" . }}
   </a>
   <div>
     <h2><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>

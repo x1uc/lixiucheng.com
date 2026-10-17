@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+"""Reject GPS and camera metadata in images and videos without changing files."""
+
+import json
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+
+
+def main():
+    if not shutil.which("exiftool"):
+        print("ERROR: Install ExifTool and add exiftool to PATH.", file=sys.stderr)
+        return 1
+
+    extensions = {
+        ".jpg", ".jpeg", ".png", ".gif", ".webp", ".tif", ".tiff",
+        ".heic", ".heif", ".avif", ".mp4", ".mov", ".m4v", ".webm",
+    }
+    files = set()
+    for argument in sys.argv[1:] or ["content", "static"]:
+        path = Path(argument)
+        candidates = path.rglob("*") if path.is_dir() else [path]
+        files.update(
+            str(p.resolve()) for p in candidates if p.is_file() and p.suffix.lower() in extensions
+        )
+
+    tags = [
+        "GPSLatitude", "GPSLongitude", "GPSAltitude", "GPSDateTime", "GPSMapDatum",
+        "Make", "Model", "SerialNumber", "CameraSerialNumber", "LensSerialNumber",
+    ]
+    failed = False
+    ordered_files = sorted(files)
+    for offset in range(0, len(ordered_files), 100):
+        result = subprocess.run(
+            ["exiftool", "-json", *["-" + tag for tag in tags],
+             *ordered_files[offset:offset + 100]],
+            capture_output=True, text=True, check=False,
+        )
+        if result.returncode:
+            print(result.stderr, file=sys.stderr)
+            return 1
+        for metadata in json.loads(result.stdout):
+            if metadata.get("Error"):
+                print(f"ERROR: {metadata['SourceFile']}: {metadata['Error']}", file=sys.stderr)
+                failed = True
+            found = sorted(set(metadata).intersection(tags))
+            if found:
+                # Report field names, never the private coordinates or identifiers.
+                print(f"Sensitive metadata: {metadata['SourceFile']}: {', '.join(found)}")
+                failed = True
+
+    print(f"Checked {len(files)} media files; " + ("FAILED" if failed else "OK"))
+    return int(failed)
+
+
+if __name__ == "__main__":
+    sys.exit(main())

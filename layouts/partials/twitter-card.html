@@ -1,4 +1,4 @@
-{{- if or ($.Params.images) ($.Params.hero_image) -}}
+{{- if or ($.Params.images) ($.Params.hero_image) ($.Params.banner_image) -}}
   <meta name="twitter:card" content="summary_large_image" />
 {{ end }}
 {{ with .Site.Params.twitter }}

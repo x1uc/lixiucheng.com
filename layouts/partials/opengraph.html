@@ -11,7 +11,7 @@
 <meta
   property="og:description"
   content="{{ with .Description }}
-    {{ . }}
+    {{ . | markdownify | plainify }}
   {{ else }}
     {{ if .IsPage }}
       {{ .Summary }}
@@ -34,6 +34,12 @@
     property="og:image"
     content="{{ printf "%s%s" .Permalink $.Params.hero_image }}"
   />
+{{ else if $.Params.banner_image }}
+  {{ $banner := $.Params.banner_image }}
+  {{ if not (or (hasPrefix $banner "https://") (hasPrefix $banner "http://") (hasPrefix $banner "/")) }}
+    {{ $banner = printf "%s%s" .Permalink $banner }}
+  {{ end }}
+  <meta property="og:image" content="{{ $banner | absURL }}" />
 {{ else if and .IsPage (eq .Type "game-reports") }}
   <meta
     property="og:image"

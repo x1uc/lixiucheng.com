@@ -84,6 +84,18 @@ Invoke-PowerShellScript "check-formatting.ps1"
 Write-Host "--- Linting Markdown ---"
 Invoke-PowerShellScript "lint-markdown.ps1"
 
+Write-Host "--- Checking image and video metadata ---"
+$exifToolCommand = Get-Command exiftool -ErrorAction SilentlyContinue
+$pythonCommand = Get-Command python -ErrorAction SilentlyContinue
+if ($null -eq $pythonCommand) {
+  $pythonCommand = Get-Command python3 -ErrorAction SilentlyContinue
+}
+if ($null -ne $exifToolCommand -and $null -ne $pythonCommand) {
+  Invoke-CommandChecked $pythonCommand @("./dev-scripts/check-exif-data", "content", "static")
+} else {
+  Write-Warning "Install ExifTool and Python 3 to enable media metadata checks."
+}
+
 Write-Host "--- Building Site ---"
 $hugoCommand = Get-Command hugo -ErrorAction SilentlyContinue
 if ($null -eq $hugoCommand) {
