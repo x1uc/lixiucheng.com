@@ -34,6 +34,13 @@ echo "--- Linting Markdown ---"
 ./dev-scripts/lint-markdown
 
 # 5. Build Site
+echo "--- Checking image and video metadata ---"
+if command_exists exiftool && command_exists python3; then
+    ./dev-scripts/check-exif-data content static
+else
+    echo "WARNING: Install ExifTool and Python 3 to enable media metadata checks."
+fi
+
 echo "--- Building Site ---"
 if command_exists hugo; then
     hugo version

@@ -8,6 +8,11 @@ on:
 permissions:
   contents: read
 
+# Shared tool versions, matching upstream's shared Node executor and pinned deploy CLI.
+env:
+  NODE_VERSION: 24.15.0
+  WRANGLER_VERSION: 4.20.5
+
 jobs:
   check-whitespace:
     name: Check whitespace
@@ -32,7 +37,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24.15.0
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Install npm packages
@@ -51,7 +56,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24.15.0
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Install npm packages
@@ -59,6 +64,34 @@ jobs:
 
       - name: Lint Markdown
         run: ./dev-scripts/lint-markdown
+
+  check-exif-data:
+    name: Check image and video metadata
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install ExifTool
+        run: sudo apt-get update && sudo apt-get install --yes libimage-exiftool-perl
+
+      - name: Check media metadata
+        env:
+          BASE_REF: ${{ github.base_ref || 'main' }}
+        run: |
+          if [[ "$GITHUB_REF" == "refs/heads/main" ]]; then
+            ./dev-scripts/check-exif-data content static
+          else
+            git diff --name-only --diff-filter=ACMR -z "origin/${BASE_REF}...HEAD" -- content static > "$RUNNER_TEMP/changed-media"
+            mapfile -d '' changed_files < "$RUNNER_TEMP/changed-media"
+            if (( ${#changed_files[@]} )); then
+              ./dev-scripts/check-exif-data "${changed_files[@]}"
+            else
+              echo "No changed media files to check."
+            fi
+          fi
 
   build:
     name: Build site
@@ -79,8 +112,10 @@ jobs:
           path: resources
           key: resources-gen-v1
 
-      - name: Build prod site
-        run: hugo version && hugo --minify
+      - name: Build site
+        env:
+          HUGO_ENVIRONMENT: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
+        run: hugo version && hugo --minify --cleanDestinationDir
 
       - name: Upload generated site
         uses: actions/upload-artifact@v7
@@ -163,13 +198,13 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24.15.0
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: Remove base tag from generated HTML
-        run: find public -name "*.html" -exec sed -i -e 's/<base[^>]*>//g' {} +
+      - name: Print Wrangler version
+        run: npx --yes "wrangler@${WRANGLER_VERSION}" --version
 
       - name: Deploy to draft
-        run: npx wrangler@4.20.5 pages deploy public --project-name=xiuc --branch=draft
+        run: npx --yes "wrangler@${WRANGLER_VERSION}" pages deploy public --project-name=xiuc --branch=draft
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -181,6 +216,7 @@ jobs:
       - check-whitespace
       - check-formatting
       - lint-markdown
+      - check-exif-data
       - build
       - check-seo-metadata
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -197,10 +233,13 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24.15.0
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Print Wrangler version
+        run: npx --yes "wrangler@${WRANGLER_VERSION}" --version
 
       - name: Deploy to production
-        run: npx wrangler@4.20.5 pages deploy public --project-name=xiuc --branch=main
+        run: npx --yes "wrangler@${WRANGLER_VERSION}" pages deploy public --project-name=xiuc --branch=main
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

@@ -1,0 +1,17 @@
+{{/* Render a Hugo image resource at the configured responsive widths. */}}
+{{ $image := .image }}
+{{ $sources := slice }}
+{{ range .photoWidths }}
+  {{ if lt . $image.Width }}
+    {{ $resized := $image.Resize (printf "%dx" .) }}
+    {{ $sources = $sources | append (printf "%s %dw" $resized.RelPermalink .) }}
+  {{ end }}
+{{ end }}
+{{ $sources = $sources | append (printf "%s %dw" $image.RelPermalink $image.Width) }}
+<img
+  src="{{ $image.RelPermalink }}"
+  srcset="{{ delimit $sources ", " }}"
+  sizes="{{ .sizes | default "(min-width: 768px) 280px, 98vw" }}"
+  alt="{{ .alt | default "" }}"
+  loading="{{ .loading | default "lazy" }}"
+/>

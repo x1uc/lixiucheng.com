@@ -1,0 +1,34 @@
+{{/* Keep legacy images paths as well as the upstream banner_image field. */}}
+{{ $page := . }}
+{{ $src := "" }}
+{{ if .Params.hero_image }}
+  {{ $src = .Params.hero_image }}
+{{ else if .Params.banner_image }}
+  {{ $src = .Params.banner_image }}
+{{ else }}
+  {{ with .Params.images }}
+    {{ $src = index . 0 }}
+  {{ end }}
+{{ end }}
+{{ with $src }}
+  {{ $image := false }}
+  {{ if not (or (or (hasPrefix . "https://") (hasPrefix . "http://")) (hasPrefix . "//")) }}
+    {{ $resourcePath := strings.TrimPrefix $page.RelPermalink . }}
+    {{ $resourcePath = strings.TrimPrefix (strings.TrimPrefix "/" $page.RelPermalink) $resourcePath }}
+    {{ if not (hasPrefix $resourcePath "/") }}
+      {{ $image = $page.Resources.GetMatch $resourcePath }}
+    {{ end }}
+  {{ end }}
+  {{ if and $image (ne $image.MediaType.SubType "svg+xml") }}
+    {{ partial "responsive-img.html" (dict "image" $image "alt" $page.Title "photoWidths" $page.Site.Params.photoWidths) }}
+  {{ else }}
+    {{ if not (or (or (hasPrefix . "https://") (hasPrefix . "http://")) (hasPrefix . "/")) }}
+      {{ if or $page.Params.hero_image $page.Params.banner_image }}
+        {{ $src = printf "%s%s" $page.RelPermalink . }}
+      {{ else }}
+        {{ $src = printf "/%s" . }}
+      {{ end }}
+    {{ end }}
+    <img src="{{ $src }}" alt="{{ $page.Title }}" loading="lazy" />
+  {{ end }}
+{{ end }}
