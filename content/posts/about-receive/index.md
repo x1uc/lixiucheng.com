@@ -1,9 +1,9 @@
 ---
 title: "以 itadakimasu 作为引子聊聊给予"
 date: 2026-10-29
-description: ""
+description: "我对给予和接受的一些思考，索取和接受一定程度上也是一种给予"
 images:
-  - about-receive/cover.webp
+  - about-receive/flower-itadakimasu.webp
 ---
 
 ## itadakimasu
