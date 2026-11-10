@@ -1,7 +1,7 @@
 ---
 title: "不同 Agent 上下文压缩的实现对比"
 date: 2026-10-18
-description: "从压缩时机、提示词和代码阅读体验，对比 Crush、OpenCode 和 Pi 的上下文压缩实现。"
+description: "从压缩时机、提示词和代码阅读体验，对比 Crush、OpenCode 和 Pi 的上下文压缩实现"
 images:
   - agents-compact/cover.png
 ---
