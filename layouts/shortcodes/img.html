@@ -14,17 +14,23 @@
   {{ $maxWidthPixels = int (replace $maxWidth "px" "") }}
 {{ end }}
 
+{{ with .Parent }}
+  {{ if and (eq .Name "image-row") (.Get "height") }}
+    {{ $maxWidthPixels = mul (float (.Get "height")) (div (float $image.Width) (float $image.Height)) }}
+  {{ end }}
+{{ end }}
+
 {{- /* If maxWidth is set to match the image size, but it also has a border, add
   2px to the maxWidth to account for the 1px border on either side. */ -}}
 {{ if (and $hasBorder (eq $maxWidthPixels $image.Width)) }}
   {{ $maxWidthPixels = add $maxWidthPixels 2 }}
 {{ end }}
 
-{{ $maxWidth = printf "%dpx" $maxWidthPixels }}
+{{ $maxWidth = printf "%gpx" (float $maxWidthPixels) }}
 
 {{ $containerAttrs := printf `class="img%s"%s`
   (cond (ne $align "") (printf " align-%s" $align) "")
-  (cond (ne $maxWidth "") (printf ` style="max-width: %s"` $maxWidth) "") | safeHTMLAttr }}
+  (cond (ne $maxWidth "") (printf ` style="max-width: %s; flex-basis: %s"` $maxWidth $maxWidth) "") | safeHTMLAttr }}
 
 {{ $srcset := "" }}
 {{ range $.Site.Params.photoWidths }}
